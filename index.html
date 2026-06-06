@@ -1,435 +1,2295 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Professional English M019 — Unit 4</title>
+
 <style>
 *{
   box-sizing:border-box;
 }
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#f4f6fb;
+  background:#f6f4ff;
   color:#1f2937;
   line-height:1.6;
 }
-header{
-  background:linear-gradient(135deg,#1e3a8a,#7c3aed);
+
+body.protected{
+  user-select:none;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.25), transparent 35%),
+    linear-gradient(135deg,#312e81,#6d28d9,#be185d);
   color:white;
-  padding:40px 20px;
+  padding:54px 20px 46px;
   text-align:center;
 }
-header h1{
+
+.hero h1{
   margin:0;
-  font-size:34px;
+  font-size:38px;
+  letter-spacing:.3px;
 }
-header p{
-  margin-top:10px;
+
+.hero p{
+  margin:12px auto 0;
+  max-width:760px;
   font-size:18px;
   opacity:.95;
 }
-.wrapper{
-  max-width:1100px;
-  margin:30px auto;
-  padding:0 16px 50px;
+
+.unit-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  padding:14px 16px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #ede9fe;
+  box-shadow:0 8px 20px rgba(49,46,129,.08);
 }
+
+.unit-nav a{
+  text-decoration:none;
+  font-weight:800;
+  color:#4c1d95;
+  background:#ede9fe;
+  padding:10px 16px;
+  border-radius:999px;
+  transition:.2s;
+}
+
+.unit-nav a:hover{
+  background:#7c3aed;
+  color:white;
+  transform:translateY(-1px);
+}
+
+.wrapper{
+  max-width:1180px;
+  margin:34px auto 70px;
+  padding:0 18px;
+}
+
 .unit-card{
   background:white;
-  border-radius:18px;
-  padding:24px;
-  margin-bottom:28px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  border-radius:26px;
+  padding:28px;
+  margin-bottom:34px;
+  box-shadow:0 18px 45px rgba(49,46,129,.12);
+  border:1px solid rgba(124,58,237,.12);
+  scroll-margin-top:90px;
 }
-.unit-card h2{
-  margin-top:0;
-  color:#1e3a8a;
-  font-size:26px;
+
+.unit-header{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  border-bottom:1px solid #ede9fe;
+  padding-bottom:18px;
+  margin-bottom:22px;
 }
+
+.unit-header h2{
+  margin:0;
+  color:#312e81;
+  font-size:27px;
+}
+
+.badge{
+  display:inline-block;
+  background:#ede9fe;
+  color:#5b21b6;
+  font-weight:800;
+  border-radius:999px;
+  padding:7px 13px;
+  font-size:13px;
+}
+
 .unit-description{
-  background:#eef2ff;
-  border-left:5px solid #4f46e5;
-  padding:14px 16px;
-  border-radius:10px;
-  margin-bottom:20px;
+  background:#faf5ff;
+  border:1px solid #e9d5ff;
+  border-left:6px solid #7c3aed;
+  padding:15px 17px;
+  border-radius:16px;
+  margin-bottom:22px;
+  color:#374151;
 }
+
 .question{
-  border:1px solid #e5e7eb;
-  border-radius:14px;
-  padding:18px;
-  margin:16px 0;
   background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:20px;
+  padding:20px;
+  margin:18px 0;
+  transition:.2s;
 }
-.question-title{
-  font-weight:700;
-  margin-bottom:12px;
-  font-size:17px;
+
+.question:hover{
+  border-color:#c4b5fd;
+  box-shadow:0 10px 28px rgba(124,58,237,.08);
 }
+
 .qtype{
   display:inline-block;
   font-size:12px;
-  font-weight:700;
-  color:#4338ca;
-  background:#e0e7ff;
-  padding:4px 8px;
+  font-weight:800;
+  letter-spacing:.2px;
+  color:#6d28d9;
+  background:#f3e8ff;
+  padding:5px 10px;
   border-radius:999px;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
-label{
+
+.question-title{
+  font-weight:800;
+  font-size:17px;
+  margin-bottom:12px;
+  color:#111827;
+}
+
+.option{
   display:block;
-  padding:9px 10px;
-  margin:6px 0;
-  border-radius:10px;
+  padding:10px 12px;
+  margin:7px 0;
+  border-radius:13px;
   cursor:pointer;
-  border:1px solid transparent;
+  border:1px solid #f1f5f9;
+  background:#fafafa;
 }
-label:hover{
-  background:#f3f4f6;
-  border-color:#e5e7eb;
+
+.option:hover{
+  background:#f5f3ff;
+  border-color:#ddd6fe;
 }
-input{
+
+.option input{
   margin-right:8px;
 }
-button{
-  background:#4f46e5;
+
+.btn{
+  background:linear-gradient(135deg,#4f46e5,#9333ea);
   color:white;
   border:none;
-  border-radius:12px;
-  padding:13px 22px;
+  border-radius:16px;
+  padding:14px 24px;
   font-size:16px;
-  font-weight:700;
+  font-weight:800;
   cursor:pointer;
   margin-top:18px;
+  box-shadow:0 10px 24px rgba(79,70,229,.24);
 }
-button:hover{
-  background:#3730a3;
+
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 30px rgba(79,70,229,.32);
 }
+
 .result{
-  margin-top:25px;
+  margin-top:26px;
 }
+
 .summary{
-  background:#ecfdf5;
+  background:#f0fdf4;
   border:1px solid #bbf7d0;
-  border-radius:16px;
-  padding:18px;
+  border-left:6px solid #22c55e;
+  border-radius:20px;
+  padding:20px;
   margin-bottom:18px;
 }
+
+.summary h3{
+  margin:0 0 6px;
+  font-size:24px;
+  color:#166534;
+}
+
 .answer-card{
-  border-radius:14px;
-  padding:16px;
-  margin:12px 0;
+  border-radius:18px;
+  padding:17px;
+  margin:13px 0;
   border:1px solid #e5e7eb;
 }
+
 .correct{
   background:#f0fdf4;
   border-color:#86efac;
 }
+
 .wrong{
-  background:#fef2f2;
-  border-color:#fecaca;
+  background:#fff1f2;
+  border-color:#fecdd3;
 }
+
 .correct-text{
   color:#15803d;
-  font-weight:700;
+  font-weight:800;
 }
+
 .wrong-text{
-  color:#b91c1c;
-  font-weight:700;
+  color:#be123c;
+  font-weight:800;
 }
+
 .explain{
-  margin-top:8px;
+  margin-top:9px;
   font-size:15px;
 }
-.small{
+
+.source{
+  display:inline-block;
+  margin-top:8px;
   color:#6b7280;
   font-size:13px;
 }
-.footer-note{
+
+.footer{
   text-align:center;
-  margin-top:40px;
   color:#6b7280;
   font-size:14px;
+  margin-top:38px;
 }
-.protect{
-  user-select:none;
-}
-@media(max-width:700px){
-  header h1{
-    font-size:26px;
+
+@media(max-width:720px){
+  .hero h1{
+    font-size:28px;
   }
+
+  .hero p{
+    font-size:16px;
+  }
+
   .unit-card{
-    padding:18px;
+    padding:20px;
+    border-radius:20px;
+  }
+
+  .unit-nav a{
+    padding:9px 13px;
+    font-size:14px;
   }
 }
 </style>
 </head>
-<body class="protect">
-<header>
+
+<body class="protected">
+
+<section class="hero">
   <h1>Professional English M019</h1>
   <p>Unit 4 — Culture Saves the World</p>
-</header>
+</section>
 
-<div class="wrapper">
+<nav class="unit-nav">
+  <a href="#unit41-section">Unit 4.1</a>
+  <a href="#unit42-section">Unit 4.2</a>
+  <a href="#unit43-section">Unit 4.3</a>
+</nav>
 
-  <div class="unit-card">
-    <h2>Unit 4.1 — Cross-Cultural Communication</h2>
-    <div class="unit-description">
-      <b>Topic:</b> intercultural communication, cultural diversity, communication styles, Lewis Model, stereotypes, phrases and idioms.
+<main class="wrapper">
+
+<section class="unit-card" id="unit41-section">
+  <div class="unit-header">
+    <div>
+      <h2>Unit 4.1 — Cross-Cultural Communication</h2>
+      <p class="unit-description">
+        Topic: intercultural communication, cultural diversity, communication styles, Lewis Model, stereotypes, phrases and idioms.
+      </p>
     </div>
-    <div id="quiz-unit41"></div>
-    <button onclick="checkUnit('unit41')">Показать результат</button>
-    <div id="result-unit41" class="result"></div>
+    <span class="badge">40 questions</span>
   </div>
 
-  <div class="unit-card">
-    <h2>Unit 4.2 — Maintaining Cultural Identity</h2>
-    <div class="unit-description">
-      <b>Topic:</b> identity, cultural identity, heritage, language and culture, intercultural awareness, clauses.
+  <div id="quiz-unit41"></div>
+  <button class="btn" onclick="checkUnit('unit41')">Show result / Показать результат</button>
+  <div id="result-unit41" class="result"></div>
+</section>
+
+<section class="unit-card" id="unit42-section">
+  <div class="unit-header">
+    <div>
+      <h2>Unit 4.2 — Maintaining Cultural Identity</h2>
+      <p class="unit-description">
+        Topic: identity, cultural identity, heritage, language and culture, intercultural awareness, clauses.
+      </p>
     </div>
-    <div id="quiz-unit42"></div>
-    <button onclick="checkUnit('unit42')">Показать результат</button>
-    <div id="result-unit42" class="result"></div>
+    <span class="badge">40 questions</span>
   </div>
 
-  <div class="unit-card">
-    <h2>Unit 4.3 — Moral and Ethical Patterns of the Contemporary Society</h2>
-    <div class="unit-description">
-      <b>Topic:</b> values, morals, ethics, moral education, purpose clauses, cultural profile.
+  <div id="quiz-unit42"></div>
+  <button class="btn" onclick="checkUnit('unit42')">Show result / Показать результат</button>
+  <div id="result-unit42" class="result"></div>
+</section>
+
+<section class="unit-card" id="unit43-section">
+  <div class="unit-header">
+    <div>
+      <h2>Unit 4.3 — Moral and Ethical Patterns of the Contemporary Society</h2>
+      <p class="unit-description">
+        Topic: values, morals, ethics, moral education, purpose clauses, cultural profile.
+      </p>
     </div>
-    <div id="quiz-unit43"></div>
-    <button onclick="checkUnit('unit43')">Показать результат</button>
-    <div id="result-unit43" class="result"></div>
+    <span class="badge">40 questions</span>
   </div>
 
-  <div class="footer-note">
-    © @elnazm_ln — оқу материалы. Көшіруге және қайта сатуға болмайды.
-  </div>
+  <div id="quiz-unit43"></div>
+  <button class="btn" onclick="checkUnit('unit43')">Show result / Показать результат</button>
+  <div id="result-unit43" class="result"></div>
+</section>
 
+<div class="footer">
+  © @elnazm_ln — Educational material. Copying, resale and redistribution are not allowed.
 </div>
+
+</main>
 
 <script>
 const DATA = {
+
 unit41:{
 title:"Unit 4.1 — Cross-Cultural Communication",
 questions:[
-{type:"single",q:"1. Cross-cultural communication means:",options:["communication only within one culture","communication between people from different cultural backgrounds","learning grammar without context","refusing cultural diversity","studying only one language system"],answers:[1],ru:"Cross-cultural communication refers to communication between people from different cultures.",kz:"Cross-cultural communication — әртүрлі мәдени ортадан шыққан адамдар арасындағы қарым-қатынас.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"2. Intercultural communication is described as:",options:["an interdisciplinary field of inquiry","only a branch of mathematics","only nonverbal behaviour","a purely biological process","a type of tourism advertising"],answers:[0],ru:"Intercultural communication is interdisciplinary because it uses perspectives from several academic fields.",kz:"Intercultural communication бірнеше academic disciplines көзқарастарын қолданатын interdisciplinary field.",source:"POFLIC, Unit 4.1"},
-{type:"multiple",q:"3. Academic disciplines involved in intercultural communication include:",options:["psychology","anthropology","linguistics","geometry","astronomy"],answers:[0,1,2],ru:"The unit mentions psychology, anthropology, sociology, linguistics and communication. Here three key disciplines are selected.",kz:"Unit psychology, anthropology, sociology, linguistics және communication пәндерін атайды. Мұнда үш негізгі пән таңдалды.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"4. Psychology contributes to intercultural communication through the study of:",options:["perception, interpretation and attribution","chemical reactions only","economic inflation only","architectural design","spelling rules only"],answers:[0],ru:"Psychology helps explain perception, interpretation and attribution in intercultural communication.",kz:"Psychology intercultural communication ішінде perception, interpretation және attribution түсіндіруге көмектеседі.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"5. Linguistics contributes to intercultural communication mainly through:",options:["verbal communication and communication styles","climate research","physical training","biological inheritance","taxation policy"],answers:[0],ru:"Linguistics studies language, verbal communication and communication styles.",kz:"Linguistics language, verbal communication және communication styles зерттейді.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"6. Nonverbal communication means:",options:["communication without words","written grammar rules only","official documents only","translated dictionaries","mathematical formulas"],answers:[0],ru:"Nonverbal communication includes body language, facial expressions, gestures and other non-word signals.",kz:"Nonverbal communication — body language, facial expressions, gestures сияқты сөзсіз белгілер.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"7. Communication style means:",options:["a culturally shaped way of expressing ideas and interacting","a type of school uniform","only handwriting","a musical genre","a legal document"],answers:[0],ru:"Communication style is the way people express ideas, solve problems and interact, often shaped by culture.",kz:"Communication style — адамның ойды жеткізу, problem-solving және interaction тәсілі; оған culture әсер етеді.",source:"POFLIC, Unit 4.1"},
-{type:"multiple",q:"8. Intercultural communication may involve:",options:["verbal communication","nonverbal communication","values","weather forecasting","sport ranking"],answers:[0,1,2],ru:"The scope of intercultural communication includes verbal communication, nonverbal communication and values.",kz:"Intercultural communication verbal communication, nonverbal communication және values қамтиды.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"9. Successful cross-cultural communication requires understanding:",options:["values and what people trust in another culture","only the alphabet","only the exchange rate","only food names","only population statistics"],answers:[0],ru:"To communicate successfully across cultures, people need to understand cultural values and trust patterns.",kz:"Cross-cultural communication сәтті болуы үшін cultural values және trust patterns түсіну қажет.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"10. Nordic, German and Anglo-Saxon cultures tend to trust:",options:["facts, figures and proven competence","only emotional speeches","rumours and stereotypes","silence only","random promises"],answers:[0],ru:"The unit states that these cultures tend to trust facts, figures and proven competence.",kz:"Unit бойынша Nordic, German және Anglo-Saxon cultures facts, figures және proven competence сенеді.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"11. Latin cultures tend to trust:",options:["charisma, vision and persuasive skills","only written contracts","silence and distance only","no personal contact","mathematical tables only"],answers:[0],ru:"Latin cultures are described as trusting charisma, vision and persuasive skills.",kz:"Latin cultures charisma, vision және persuasive skills-ке көбірек сенеді.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"12. The phrase “winning hearts comes first” means:",options:["emotional connection is important before logical persuasion","facts should always be ignored","people must avoid communication","silence is the only communication style","business should never use emotion"],answers:[0],ru:"In some cultures, emotional trust and personal connection come before rational arguments.",kz:"Кейбір cultures үшін emotional trust және personal connection logical arguments-тен бұрын келеді.",source:"POFLIC, Unit 4.1"},
-{type:"multiple",q:"13. Layers of culture may include:",options:["regional culture","professional culture","generational culture","cloud temperature","chemical formula"],answers:[0,1,2],ru:"Culture has many layers, including regional, professional, educational, gender, generational, class and corporate layers.",kz:"Culture бірнеше layer-ден тұрады: regional, professional, educational, gender, generational, class, corporate.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"14. Culture can be defined as:",options:["learned and shared ways of thinking, behaving and communicating","only national food","only traditional clothes","only official language","only museum objects"],answers:[0],ru:"Culture includes shared and learned ways of thinking, behaviour and communication.",kz:"Culture — ортақ және үйренілген thinking, behaviour және communication тәсілдері.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"15. Misunderstanding across cultures may occur because people:",options:["assume that all people are similar","always know all customs perfectly","never use nonverbal signs","speak only one language fluently","avoid any interpretation"],answers:[0],ru:"The assumption of similarities is a common source of intercultural misunderstanding.",kz:"Assumption of similarities — intercultural misunderstanding-тің жиі себебі.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"16. The assumption of similarities means:",options:["expecting people from different cultures to think and behave alike","accepting all cultural differences carefully","studying every encounter individually","avoiding stereotypes","developing tolerance of ambiguity"],answers:[0],ru:"Assumption of similarities means people expect others to share the same values, attitudes and behaviours.",kz:"Assumption of similarities — басқа адамдардың values, attitudes және behaviours бірдей деп күту.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"17. The assumption of differences helps people:",options:["adjust reactions and interpretations more appropriately","misread signs more often","ignore cultural context","judge others automatically","avoid observation"],answers:[0],ru:"Assuming differences helps people interpret behaviour more carefully and appropriately.",kz:"Assumption of differences адамдарға behaviour-ды мұқият және дұрыс interpret етуге көмектеседі.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"18. A nonjudgmental attitude means:",options:["observing without quick negative judgement","judging people immediately","refusing all differences","relying only on stereotypes","avoiding communication"],answers:[0],ru:"A nonjudgmental attitude means avoiding quick judgement and trying to understand context.",kz:"Nonjudgmental attitude — тез judgement жасамай, context түсінуге тырысу.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"19. Tolerance of ambiguity means:",options:["ability to accept uncertainty without immediate negative judgement","fear of every unclear situation","refusing new experiences","expecting one fixed answer always","avoiding intercultural contact"],answers:[0],ru:"Tolerance of ambiguity is important because intercultural situations are often unclear and complex.",kz:"Tolerance of ambiguity intercultural situations түсініксіз және complex болғанда қажет.",source:"POFLIC, Unit 4.1"},
-{type:"multiple",q:"20. To prepare better for intercultural communication, a person should develop:",options:["on-site observation","nonjudgmental attitude","tolerance of ambiguity","automatic stereotyping","refusal of differences"],answers:[0,1,2],ru:"The unit recommends observation, nonjudgmental attitude and tolerance of ambiguity.",kz:"Unit observation, nonjudgmental attitude және tolerance of ambiguity дамытуға кеңес береді.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"21. Stereotype means:",options:["oversimplified belief about a group of people","careful individual analysis","verified scientific law","neutral observation only","a grammar phrase"],answers:[0],ru:"A stereotype is a simplified and often unfair idea about a group.",kz:"Stereotype — белгілі бір group туралы тым жеңілдетілген, жиі әділетсіз пікір.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"22. Prejudice means:",options:["negative opinion formed without enough knowledge","respectful cultural analysis","fair academic research","reliable evidence","cultural adaptation"],answers:[0],ru:"Prejudice is a negative attitude formed before knowing enough facts.",kz:"Prejudice — жеткілікті facts білмей тұрып қалыптасқан negative attitude.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"23. Culture shock means:",options:["confusion or stress when entering an unfamiliar culture","learning grammar quickly","complete cultural expertise","avoiding travel","normal classroom routine"],answers:[0],ru:"Culture shock is discomfort or confusion caused by living in or encountering a different culture.",kz:"Culture shock — басқа culture-мен кездескенде немесе сол жерде өмір сүргенде туатын confusion/stress.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"24. Reverse culture shock means:",options:["difficulty readjusting to one’s home culture after being abroad","first arrival in a foreign country","learning a new alphabet","refusing all travel","misunderstanding grammar rules"],answers:[0],ru:"Reverse culture shock happens when a person returns home and finds readjustment difficult.",kz:"Reverse culture shock — abroad кейін home culture-ға қайта бейімделу қиындығы.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"25. The Iceberg of Culture suggests that:",options:["some cultural elements are visible, while deeper values are hidden","all culture is visible immediately","culture is only food and clothing","values are never important","communication has no hidden side"],answers:[0],ru:"The iceberg model shows that visible culture is only part of culture; deeper values and beliefs are hidden.",kz:"Iceberg model visible culture тек бір бөлігі екенін, deeper values және beliefs жасырын болатынын көрсетеді.",source:"POFLIC, Unit 4.1"},
-{type:"multiple",q:"26. Visible elements of culture may include:",options:["arts","fashion","food","deep values only","hidden beliefs only"],answers:[0,1,2],ru:"Visible cultural elements may include arts, fashion, food, mass media, rituals and social norms.",kz:"Visible cultural elements arts, fashion, food, mass media, rituals және social norms болуы мүмкін.",source:"POFLIC, Unit 4.1"},
-{type:"multiple",q:"27. Areas of cross-cultural misunderstanding may include:",options:["values","communication patterns","use of time and space","weather maps","exam scores only"],answers:[0,1,2],ru:"Misunderstanding often appears in values, communication patterns, and use of time and space.",kz:"Misunderstanding values, communication patterns және use of time/space салаларында жиі болады.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"28. The Lewis Model classifies cultures into:",options:["Linear-active, Multi-active and Reactive","Formal, informal and passive","Ancient, modern and future","Local, national and universal","Physical, chemical and biological"],answers:[0],ru:"The Lewis Model classifies cultures into Linear-active, Multi-active and Reactive categories.",kz:"Lewis Model cultures-ты Linear-active, Multi-active және Reactive categories деп бөледі.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"29. Linear-active cultures are generally associated with:",options:["planning, facts and job-oriented behaviour","doing many things at a time only","never confronting and listening most of the time only","avoiding schedules completely","emotional persuasion only"],answers:[0],ru:"Linear-active cultures are often linked with planning, facts, directness and task orientation.",kz:"Linear-active cultures planning, facts, directness және task orientation арқылы сипатталады.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"30. Multi-active cultures are generally associated with:",options:["emotion, persuasion and people-oriented behaviour","strict one-task planning only","silence and passive listening only","avoiding relationships","mechanical rules only"],answers:[0],ru:"Multi-active cultures are often people-oriented and value emotion, persuasion and relationships.",kz:"Multi-active cultures people-oriented болып, emotion, persuasion және relationships бағалайды.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"31. Reactive cultures are generally associated with:",options:["listening, courtesy and avoiding confrontation","speaking most of the time","direct confrontation in every case","ignoring relationships","rejecting harmony"],answers:[0],ru:"Reactive cultures often emphasize listening, courtesy, harmony and avoiding direct confrontation.",kz:"Reactive cultures listening, courtesy, harmony және avoiding confrontation арқылы сипатталады.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"32. A mediator in multicultural teams is someone who:",options:["helps people from different cultural styles understand one another","creates conflict intentionally","refuses communication","prevents teamwork","ignores cultural differences"],answers:[0],ru:"A mediator helps bridge communication gaps between different cultural styles.",kz:"Mediator әртүрлі cultural styles арасындағы communication gaps азайтуға көмектеседі.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"33. Verbal cultures usually value:",options:["open verbal expression and discussion","silence in all situations only","no spoken communication","written symbols only","gestures without speech only"],answers:[0],ru:"Verbal cultures tend to rely more on spoken expression and discussion.",kz:"Verbal cultures spoken expression және discussion-ға көбірек сүйенеді.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"34. Non-verbal cultures may value:",options:["silence, context and indirect communication","speaking all the time only","arguing loudly in every situation","ignoring body language","rejecting context"],answers:[0],ru:"Non-verbal cultures may communicate more through context, silence, body language and indirect signs.",kz:"Non-verbal cultures context, silence, body language және indirect signs арқылы communicate етуі мүмкін.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"35. Turn-taking in communication refers to:",options:["how people take turns during a conversation","how people travel abroad","how people write essays","how people choose clothes","how people read maps"],answers:[0],ru:"Turn-taking means the cultural rules for when and how people speak during conversation.",kz:"Turn-taking — conversation кезінде адамдардың қашан және қалай кезекпен сөйлеу ережелері.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"36. Problem-solving style in culture refers to:",options:["how people discuss and deal with problems","how people decorate rooms","how people memorize idioms","how people choose food","how people avoid all communication"],answers:[0],ru:"Different cultures may solve problems verbally, indirectly, collectively or through silence.",kz:"Әртүрлі cultures problems-ты verbally, indirectly, collectively немесе silence арқылы шешуі мүмкін.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"37. A prepositional phrase begins with:",options:["a preposition and ends with a noun or pronoun","a modal verb only","an article only","an adjective only","a conjunction only"],answers:[0],ru:"A prepositional phrase begins with a preposition and ends with a noun or pronoun.",kz:"Prepositional phrase preposition-нан басталып, noun немесе pronoun-мен аяқталады.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"38. An adjectival phrase functions as:",options:["an adjective","a verb tense","a complete sentence only","an interjection","a conjunction"],answers:[0],ru:"An adjectival phrase modifies or describes a noun like an adjective.",kz:"Adjectival phrase adjective сияқты noun-ды сипаттайды.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"39. An adverbial phrase functions as:",options:["an adverb","a noun only","an article","a pronoun only","a suffix"],answers:[0],ru:"An adverbial phrase modifies a verb, adjective or adverb.",kz:"Adverbial phrase verb, adjective немесе adverb-ті modifies етеді.",source:"POFLIC, Unit 4.1"},
-{type:"single",q:"40. An appositive phrase is:",options:["a noun or pronoun that renames another noun or pronoun","a verb form ending in -ing only","a sentence without a subject","a phrase beginning with a preposition","a type of idiom only"],answers:[0],ru:"An appositive gives another name or explanation for a noun or pronoun.",kz:"Appositive noun немесе pronoun-ды қайта атап, түсіндіреді.",source:"POFLIC, Unit 4.1"}
+{
+type:"single",
+q:"1. Cross-cultural communication means:",
+options:[
+"communication only within one culture",
+"communication between people from different cultural backgrounds",
+"learning grammar without context",
+"refusing cultural diversity",
+"studying only one language system"
+],
+answers:[1],
+ru:"Кросс-культурная коммуникация означает общение между людьми из разных культурных сред.",
+kz:"Cross-cultural communication — әртүрлі мәдени ортадан шыққан адамдар арасындағы қарым-қатынас.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"2. Intercultural communication is described as:",
+options:[
+"an interdisciplinary field of inquiry",
+"only a branch of mathematics",
+"only nonverbal behaviour",
+"a purely biological process",
+"a type of tourism advertising"
+],
+answers:[0],
+ru:"Межкультурная коммуникация является междисциплинарной областью, потому что она использует знания психологии, антропологии, социологии, лингвистики и коммуникации.",
+kz:"Intercultural communication interdisciplinary field, себебі psychology, anthropology, sociology, linguistics және communication studies білімдерін қолданады.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"multiple",
+q:"3. Academic disciplines involved in intercultural communication include:",
+options:[
+"psychology",
+"anthropology",
+"linguistics",
+"geometry",
+"astronomy"
+],
+answers:[0,1,2],
+ru:"К межкультурной коммуникации относятся такие дисциплины, как психология, антропология, социология, лингвистика и коммуникация.",
+kz:"Intercultural communication бірнеше пәнмен байланысты: psychology, anthropology, sociology, linguistics және communication.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"4. Psychology contributes to intercultural communication through the study of:",
+options:[
+"perception, interpretation and attribution",
+"chemical reactions only",
+"economic inflation only",
+"architectural design",
+"spelling rules only"
+],
+answers:[0],
+ru:"Психология помогает объяснить, как люди воспринимают, интерпретируют и приписывают значения в межкультурных ситуациях.",
+kz:"Psychology intercultural situations ішінде адамдардың perceive, interpret және attribute meaning жасауын түсіндіреді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"5. Linguistics contributes to intercultural communication mainly through:",
+options:[
+"verbal communication and communication styles",
+"climate research",
+"physical training",
+"biological inheritance",
+"taxation policy"
+],
+answers:[0],
+ru:"Лингвистика изучает язык, вербальную коммуникацию и стили общения.",
+kz:"Linguistics language, verbal communication және communication styles зерттейді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"6. Nonverbal communication means:",
+options:[
+"communication without words",
+"written grammar rules only",
+"official documents only",
+"translated dictionaries",
+"mathematical formulas"
+],
+answers:[0],
+ru:"Невербальная коммуникация включает язык тела, выражение лица, жесты, зрительный контакт и другие сигналы без слов.",
+kz:"Nonverbal communication — body language, facial expressions, gestures, eye contact сияқты сөзсіз белгілер.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"7. Communication style means:",
+options:[
+"a culturally shaped way of expressing ideas and interacting",
+"a type of school uniform",
+"only handwriting",
+"a musical genre",
+"a legal document"
+],
+answers:[0],
+ru:"Стиль коммуникации — это способ выражения мыслей, взаимодействия, решения проблем и использования вербальных или невербальных сигналов.",
+kz:"Communication style — адамның ойды жеткізу, interact ету, problem-solving және verbal/nonverbal signals қолдану тәсілі.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"multiple",
+q:"8. Intercultural communication may involve:",
+options:[
+"verbal communication",
+"nonverbal communication",
+"values",
+"weather forecasting",
+"sport ranking"
+],
+answers:[0,1,2],
+ru:"Межкультурная коммуникация включает вербальное общение, невербальное общение, ценности, восприятие и стили коммуникации.",
+kz:"Intercultural communication verbal communication, nonverbal communication, values, perception және communication styles қамтиды.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"9. Successful cross-cultural communication requires understanding:",
+options:[
+"values and what people trust in another culture",
+"only the alphabet",
+"only the exchange rate",
+"only food names",
+"only population statistics"
+],
+answers:[0],
+ru:"Успешная кросс-культурная коммуникация требует понимания культурных ценностей, ожиданий и того, чему люди доверяют в другой культуре.",
+kz:"Successful cross-cultural communication үшін cultural values, expectations және trust patterns түсіну қажет.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"10. Nordic, German and Anglo-Saxon cultures tend to trust:",
+options:[
+"facts, figures and proven competence",
+"only emotional speeches",
+"rumours and stereotypes",
+"silence only",
+"random promises"
+],
+answers:[0],
+ru:"В тексте такие культуры описаны как культуры, которые больше доверяют фактам, цифрам и доказанной компетентности.",
+kz:"Бұл cultures facts, figures және proven competence-ке көбірек сенеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"11. Latin cultures tend to trust:",
+options:[
+"charisma, vision and persuasive skills",
+"only written contracts",
+"silence and distance only",
+"no personal contact",
+"mathematical tables only"
+],
+answers:[0],
+ru:"Латинские культуры описаны как культуры, которые больше доверяют харизме, видению и способности убеждать.",
+kz:"Latin cultures charisma, vision және persuasive skills-ке көбірек сенеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"12. The phrase “winning hearts comes first” means:",
+options:[
+"emotional connection is important before logical persuasion",
+"facts should always be ignored",
+"people must avoid communication",
+"silence is the only communication style",
+"business should never use emotion"
+],
+answers:[0],
+ru:"Это означает, что в некоторых культурах личное доверие и эмоциональная связь устанавливаются раньше, чем логическое убеждение.",
+kz:"Кейбір cultures үшін personal trust және emotional connection logical persuasion-нан бұрын келеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"multiple",
+q:"13. Layers of culture may include:",
+options:[
+"regional culture",
+"professional culture",
+"generational culture",
+"cloud temperature",
+"chemical formula"
+],
+answers:[0,1,2],
+ru:"Культура имеет разные слои: региональный, профессиональный, образовательный, гендерный, поколенческий, классовый и корпоративный.",
+kz:"Culture бірнеше layer-ден тұрады: regional, professional, educational, gender, generational, class және corporate.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"14. Culture can be defined as:",
+options:[
+"learned and shared ways of thinking, behaving and communicating",
+"only national food",
+"only traditional clothes",
+"only official language",
+"only museum objects"
+],
+answers:[0],
+ru:"Культура включает усвоенные и разделяемые группой способы мышления, поведения и коммуникации.",
+kz:"Culture — group ішінде learned және shared thinking, behaving және communicating тәсілдері.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"15. Misunderstanding across cultures may occur because people:",
+options:[
+"assume that all people are similar",
+"always know all customs perfectly",
+"never use nonverbal signs",
+"speak only one language fluently",
+"avoid any interpretation"
+],
+answers:[0],
+ru:"Межкультурное недопонимание может возникать из-за предположения, что все люди думают и ведут себя одинаково.",
+kz:"Assumption of similarity misunderstanding тудыруы мүмкін, себебі адамдар others same values және behaviour share етеді деп ойлайды.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"16. The assumption of similarities means:",
+options:[
+"expecting people from different cultures to think and behave alike",
+"accepting all cultural differences carefully",
+"studying every encounter individually",
+"avoiding stereotypes",
+"developing tolerance of ambiguity"
+],
+answers:[0],
+ru:"Предположение о сходстве означает ожидание, что люди из разных культур будут думать, чувствовать и вести себя одинаково.",
+kz:"Assumption of similarities — other cultures адамдарын same way think, feel және behave етеді деп күту.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"17. The assumption of differences helps people:",
+options:[
+"adjust reactions and interpretations more appropriately",
+"misread signs more often",
+"ignore cultural context",
+"judge others automatically",
+"avoid observation"
+],
+answers:[0],
+ru:"Предположение о различиях помогает людям внимательнее интерпретировать поведение и лучше адаптировать свои реакции.",
+kz:"Assumption of differences behaviour-ды careful interpret етіп, reactions adapt етуге көмектеседі.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"18. A nonjudgmental attitude means:",
+options:[
+"observing without quick negative judgement",
+"judging people immediately",
+"refusing all differences",
+"relying only on stereotypes",
+"avoiding communication"
+],
+answers:[0],
+ru:"Безоценочное отношение означает наблюдать и пытаться понять ситуацию, прежде чем делать быстрые выводы.",
+kz:"Nonjudgmental attitude — conclusions жасамас бұрын observe және understand ету.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"19. Tolerance of ambiguity means:",
+options:[
+"ability to accept uncertainty without immediate negative judgement",
+"fear of every unclear situation",
+"refusing new experiences",
+"expecting one fixed answer always",
+"avoiding intercultural contact"
+],
+answers:[0],
+ru:"Толерантность к неопределенности — это способность спокойно принимать неясные или незнакомые межкультурные ситуации без немедленного негативного суждения.",
+kz:"Tolerance of ambiguity — unclear немесе unfamiliar intercultural situations кезінде open және calm болу ability.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"multiple",
+q:"20. To prepare better for intercultural communication, a person should develop:",
+options:[
+"on-site observation",
+"nonjudgmental attitude",
+"tolerance of ambiguity",
+"automatic stereotyping",
+"refusal of differences"
+],
+answers:[0,1,2],
+ru:"Для успешной межкультурной подготовки важны наблюдение, безоценочное отношение и толерантность к неопределенности.",
+kz:"Effective intercultural preparation observation, nonjudgmental attitude және tolerance of ambiguity қамтиды.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"21. Stereotype means:",
+options:[
+"oversimplified belief about a group of people",
+"careful individual analysis",
+"verified scientific law",
+"neutral observation only",
+"a grammar phrase"
+],
+answers:[0],
+ru:"Стереотип — это чрезмерно упрощенное и часто неточное представление о группе людей.",
+kz:"Stereotype — people group туралы oversimplified және жиі inaccurate belief.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"22. Prejudice means:",
+options:[
+"negative opinion formed without enough knowledge",
+"respectful cultural analysis",
+"fair academic research",
+"reliable evidence",
+"cultural adaptation"
+],
+answers:[0],
+ru:"Предубеждение — это отрицательное мнение или отношение, сформированное без достаточных знаний или доказательств.",
+kz:"Prejudice — жеткілікті knowledge немесе evidence болмай тұрып қалыптасқан negative attitude/opinion.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"23. Culture shock means:",
+options:[
+"confusion or stress when entering an unfamiliar culture",
+"learning grammar quickly",
+"complete cultural expertise",
+"avoiding travel",
+"normal classroom routine"
+],
+answers:[0],
+ru:"Культурный шок — это растерянность, стресс или дискомфорт, которые человек может испытывать при столкновении с незнакомой культурой.",
+kz:"Culture shock — unfamiliar culture ішіне кіргенде пайда болатын confusion, stress немесе discomfort.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"24. Reverse culture shock means:",
+options:[
+"difficulty readjusting to one’s home culture after being abroad",
+"first arrival in a foreign country",
+"learning a new alphabet",
+"refusing all travel",
+"misunderstanding grammar rules"
+],
+answers:[0],
+ru:"Обратный культурный шок возникает, когда человеку трудно заново адаптироваться к родной культуре после жизни или учебы за границей.",
+kz:"Reverse culture shock — abroad кейін home culture-ға қайта бейімделу қиын болуы.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"25. The Iceberg of Culture suggests that:",
+options:[
+"some cultural elements are visible, while deeper values are hidden",
+"all culture is visible immediately",
+"culture is only food and clothing",
+"values are never important",
+"communication has no hidden side"
+],
+answers:[0],
+ru:"Модель айсберга показывает, что видимые элементы культуры являются только небольшой частью, а более глубокие ценности и убеждения скрыты.",
+kz:"Iceberg model visible cultural elements culture-дің small part екенін, deeper values және beliefs hidden екенін көрсетеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"multiple",
+q:"26. Visible elements of culture may include:",
+options:[
+"arts",
+"fashion",
+"food",
+"deep values only",
+"hidden beliefs only"
+],
+answers:[0,1,2],
+ru:"К видимым элементам культуры могут относиться искусство, мода, еда, медиа, ритуалы и социальные нормы.",
+kz:"Visible cultural elements arts, fashion, food, mass media, rituals және social norms болуы мүмкін.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"multiple",
+q:"27. Areas of cross-cultural misunderstanding may include:",
+options:[
+"values",
+"communication patterns",
+"use of time and space",
+"weather maps",
+"exam scores only"
+],
+answers:[0,1,2],
+ru:"Межкультурные недопонимания часто возникают из-за различий в ценностях, моделях общения и использовании времени и пространства.",
+kz:"Cross-cultural misunderstanding values, communication patterns және use of time/space салаларында жиі болады.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"28. The Lewis Model classifies cultures into:",
+options:[
+"Linear-active, Multi-active and Reactive",
+"Formal, informal and passive",
+"Ancient, modern and future",
+"Local, national and universal",
+"Physical, chemical and biological"
+],
+answers:[0],
+ru:"Модель Льюиса делит культуры на три основные категории: линейно-активные, мультиактивные и реактивные.",
+kz:"Lewis Model cultures-ты Linear-active, Multi-active және Reactive categories деп бөледі.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"29. Linear-active cultures are generally associated with:",
+options:[
+"planning, facts and job-oriented behaviour",
+"doing many things at a time only",
+"never confronting and listening most of the time only",
+"avoiding schedules completely",
+"emotional persuasion only"
+],
+answers:[0],
+ru:"Линейно-активные культуры обычно связываются с планированием, фактами, ориентацией на задачу и прямотой.",
+kz:"Linear-active cultures planning, facts, task orientation және directness арқылы сипатталады.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"30. Multi-active cultures are generally associated with:",
+options:[
+"emotion, persuasion and people-oriented behaviour",
+"strict one-task planning only",
+"silence and passive listening only",
+"avoiding relationships",
+"mechanical rules only"
+],
+answers:[0],
+ru:"Мультиактивные культуры обычно ориентированы на людей и ценят эмоции, убеждение и отношения.",
+kz:"Multi-active cultures people-oriented болып, emotion, persuasion және relationships бағалайды.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"31. Reactive cultures are generally associated with:",
+options:[
+"listening, courtesy and avoiding confrontation",
+"speaking most of the time",
+"direct confrontation in every case",
+"ignoring relationships",
+"rejecting harmony"
+],
+answers:[0],
+ru:"Реактивные культуры обычно ценят слушание, вежливость, гармонию и непрямую коммуникацию.",
+kz:"Reactive cultures listening, courtesy, harmony және indirect communication бағалайды.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"32. A mediator in multicultural teams is someone who:",
+options:[
+"helps people from different cultural styles understand one another",
+"creates conflict intentionally",
+"refuses communication",
+"prevents teamwork",
+"ignores cultural differences"
+],
+answers:[0],
+ru:"Медиатор помогает людям с разными культурными стилями лучше понимать друг друга и уменьшать коммуникативные различия.",
+kz:"Mediator әртүрлі cultural styles арасындағы communication differences азайтуға көмектеседі.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"33. Verbal cultures usually value:",
+options:[
+"open verbal expression and discussion",
+"silence in all situations only",
+"no spoken communication",
+"written symbols only",
+"gestures without speech only"
+],
+answers:[0],
+ru:"Вербальные культуры больше опираются на устное выражение мыслей, открытое обсуждение и аргументацию.",
+kz:"Verbal cultures spoken expression, open discussion және argumentation-ға көбірек сүйенеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"34. Non-verbal cultures may value:",
+options:[
+"silence, context and indirect communication",
+"speaking all the time only",
+"arguing loudly in every situation",
+"ignoring body language",
+"rejecting context"
+],
+answers:[0],
+ru:"Невербальные культуры могут больше передавать смысл через молчание, контекст, язык тела и непрямые сигналы.",
+kz:"Non-verbal cultures silence, context, body language және indirect signals арқылы communicate етуі мүмкін.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"35. Turn-taking in communication refers to:",
+options:[
+"how people take turns during a conversation",
+"how people travel abroad",
+"how people write essays",
+"how people choose clothes",
+"how people read maps"
+],
+answers:[0],
+ru:"Очередность речи означает культурные правила того, когда и как люди вступают в разговор.",
+kz:"Turn-taking — conversation кезінде адамдардың қашан және қалай кезекпен сөйлеу ережелері.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"36. Problem-solving style in culture refers to:",
+options:[
+"how people discuss and deal with problems",
+"how people decorate rooms",
+"how people memorize idioms",
+"how people choose food",
+"how people avoid all communication"
+],
+answers:[0],
+ru:"Стиль решения проблем показывает, как люди в разных культурах определяют, обсуждают и решают проблемы.",
+kz:"Problem-solving style — different cultures ішінде problems identify, discuss және resolve ету тәсілі.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"37. A prepositional phrase begins with:",
+options:[
+"a preposition and ends with a noun or pronoun",
+"a modal verb only",
+"an article only",
+"an adjective only",
+"a conjunction only"
+],
+answers:[0],
+ru:"Предложная фраза начинается с предлога и заканчивается существительным или местоимением.",
+kz:"Prepositional phrase preposition-нан басталып, noun немесе pronoun-мен аяқталады.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"38. An adjectival phrase functions as:",
+options:[
+"an adjective",
+"a verb tense",
+"a complete sentence only",
+"an interjection",
+"a conjunction"
+],
+answers:[0],
+ru:"Адъективная фраза выполняет функцию прилагательного и описывает существительное.",
+kz:"Adjectival phrase adjective сияқты noun-ды modifies/describes етеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"39. An adverbial phrase functions as:",
+options:[
+"an adverb",
+"a noun only",
+"an article",
+"a pronoun only",
+"a suffix"
+],
+answers:[0],
+ru:"Адвербиальная фраза выполняет функцию наречия и может уточнять глагол, прилагательное или другое наречие.",
+kz:"Adverbial phrase verb, adjective немесе adverb-ті modifies етеді.",
+source:"POFLIC, Unit 4.1"
+},
+{
+type:"single",
+q:"40. An appositive phrase is:",
+options:[
+"a noun or pronoun that renames another noun or pronoun",
+"a verb form ending in -ing only",
+"a sentence without a subject",
+"a phrase beginning with a preposition",
+"a type of idiom only"
+],
+answers:[0],
+ru:"Аппозитивная фраза переименовывает или поясняет существительное либо местоимение.",
+kz:"Appositive phrase noun немесе pronoun-ды қайта атап, explanation береді.",
+source:"POFLIC, Unit 4.1"
+}
 ]
 },
-unit42:{
+  unit42:{
 title:"Unit 4.2 — Maintaining Cultural Identity",
 questions:[
-{type:"single",q:"1. Identity means:",options:["only a person’s passport number","the way a person or group understands who they are","only a national flag","only a language certificate","only a person’s profession"],answers:[1],ru:"Identity refers to how a person or group defines and understands themselves.",kz:"Identity — адамның немесе топтың өзін кім деп түсінуі және анықтауы.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"2. Cultural identity refers to:",options:["identification with a cultural group","only individual hobbies","only political documents","only personal appearance","only biological age"],answers:[0],ru:"Cultural identity is a sense of belonging to a particular cultural group.",kz:"Cultural identity — белгілі бір cultural group-қа belonging сезімі.",source:"POFLIC, Unit 4.2"},
-{type:"multiple",q:"3. Cultural identity can be based on:",options:["nationality","ethnicity","religion","weather forecast","random exam marks"],answers:[0,1,2],ru:"Cultural identity may be based on nationality, ethnicity, race, gender, religion and other cultural categories.",kz:"Cultural identity nationality, ethnicity, race, gender, religion сияқты cultural categories негізінде қалыптасуы мүмкін.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"4. Cultural identity is constructed and maintained through:",options:["sharing collective knowledge","avoiding traditions","refusing language","ignoring customs","rejecting heritage"],answers:[0],ru:"Cultural identity is constructed through shared traditions, heritage, language, norms and customs.",kz:"Cultural identity shared traditions, heritage, language, norms және customs арқылы қалыптасады.",source:"POFLIC, Unit 4.2"},
-{type:"multiple",q:"5. Collective knowledge may include:",options:["traditions","heritage","language","private bank passwords","random numbers"],answers:[0,1,2],ru:"Collective knowledge includes traditions, heritage, language, aesthetics, norms and customs.",kz:"Collective knowledge traditions, heritage, language, aesthetics, norms және customs қамтиды.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"6. Cultural identity is complex because individuals:",options:["usually affiliate with more than one cultural group","belong to only one fixed group forever","have no relation to society","never change their identity","cannot communicate with others"],answers:[0],ru:"People often belong to several cultural groups, so cultural identity is multifaceted.",kz:"Адамдар бірнеше cultural groups-қа жатуы мүмкін, сондықтан cultural identity multifaceted болады.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"7. Multifaceted identity means:",options:["identity has many different aspects","identity has only one simple form","identity never changes","identity exists only in documents","identity excludes culture"],answers:[0],ru:"Multifaceted identity includes different social, cultural and personal aspects.",kz:"Multifaceted identity social, cultural және personal aspects қамтиды.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"8. Modern scholars often view cultural identity as:",options:["contextual and dependent on time and space","absolutely fixed forever","unrelated to communication","only biological","impossible to negotiate"],answers:[0],ru:"Today cultural identity is often seen as contextual and changing with time and place.",kz:"Қазіргі көзқарас бойынша cultural identity contextual және time/space өзгерістеріне тәуелді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"9. In a globalized world, cultural identity is constantly:",options:["enacted, negotiated, maintained and challenged","erased completely","only written in passports","unrelated to language","separated from communication"],answers:[0],ru:"Global intercultural encounters make cultural identity dynamic and negotiated.",kz:"Global intercultural encounters cultural identity-ді dynamic және negotiated етеді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"10. Intercultural dialogue is important because it helps people:",options:["see similarities and differences with others","avoid all cultures","stop communication","reject their own identity","ignore social context"],answers:[0],ru:"Intercultural dialogue helps people understand both similarities and differences and define who they are.",kz:"Intercultural dialogue similarities және differences түсінуге және identity анықтауға көмектеседі.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"11. Cultural heritage is important because it is:",options:["the root of identity","only old buildings without meaning","unrelated to culture","only tourism business","only a school subject"],answers:[0],ru:"The unit emphasizes the idea that cultural heritage is connected with identity.",kz:"Unit cultural heritage identity-дің root екенін көрсетеді.",source:"POFLIC, Unit 4.2"},
-{type:"multiple",q:"12. Cultural heritage may include:",options:["traditions","language","customs","random social media trends only","temporary fashion only"],answers:[0,1,2],ru:"Cultural heritage includes traditions, language, customs, historical memory and cultural values.",kz:"Cultural heritage traditions, language, customs, historical memory және cultural values қамтиды.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"13. Plurality of identity means:",options:["a person may have several identities at the same time","a person has no identity","identity is only national","identity is only racial","identity never depends on context"],answers:[0],ru:"Plurality of identity means that personal, social, cultural, national and other identities may coexist.",kz:"Plurality of identity — personal, social, cultural, national және басқа identities қатар өмір сүре алады.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"14. National identity means:",options:["belonging to or identifying with a nation","belonging only to a family","only religious identity","only gender identity","only professional identity"],answers:[0],ru:"National identity is connected with belonging to a nation or country.",kz:"National identity — nation немесе country-мен belonging сезімі.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"15. Ethnic identity means:",options:["belonging to an ethnic group","only individual career goals","only age category","only temporary mood","only political opinion"],answers:[0],ru:"Ethnic identity is identification with an ethnic community or heritage.",kz:"Ethnic identity — ethnic community немесе heritage-пен identification.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"16. Regional identity means:",options:["identification with a particular region","identification only with world citizenship","only spiritual beliefs","only grammar knowledge","only professional status"],answers:[0],ru:"Regional identity is connected with belonging to a particular region.",kz:"Regional identity — белгілі бір region-мен belonging сезімі.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"17. Avowal in identity means:",options:["how people identify themselves","how others force a label on someone only","biological inheritance","legal punishment","loss of identity"],answers:[0],ru:"Avowal refers to the identity a person claims for themselves.",kz:"Avowal — адамның өзін қалай identify ететіні.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"18. Ascription in identity means:",options:["identity attributed to a person by others","a person’s own self-definition only","refusal of all social categories","private diary writing","language testing"],answers:[0],ru:"Ascription is how others identify or label a person.",kz:"Ascription — басқа адамдардың адамға identity немесе label беруі.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"19. Language and culture are closely connected because language:",options:["represents meanings and worldviews standardized by culture","has no cultural meaning","is only a set of sounds","never reflects society","prevents cultural identity"],answers:[0],ru:"Language represents cultural meanings, values and ways of seeing the world.",kz:"Language cultural meanings, values және worldviews көрсетеді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"20. Language can be described as a window into:",options:["the way people from a culture see the world","only economic statistics","only grammar mistakes","only political elections","only school timetables"],answers:[0],ru:"Language reveals how people from a culture understand and categorize the world.",kz:"Language белгілі бір culture адамдарының world-ты қалай түсінетінін көрсетеді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"21. The concept “linguaculture” connects:",options:["language and culture","language and mathematics only","culture and weather only","identity cards and passports","grammar and sports"],answers:[0],ru:"Linguaculture expresses the close relationship between language and culture.",kz:"Linguaculture language және culture арасындағы тығыз байланысты білдіреді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"22. Benjamin Lee Whorf is associated with the idea that:",options:["the language people speak can influence how they perceive the world","language never affects thinking","all languages are identical","culture is irrelevant to language","translation is always perfect"],answers:[0],ru:"Whorf’s view links language with worldview and perception.",kz:"Whorf көзқарасы language, worldview және perception арасындағы байланысты көрсетеді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"23. Accurate translation may not be enough because:",options:["cultural meaning behind words may be different","words have no culture","grammar is always universal","every word has one exact equivalent","translation removes identity"],answers:[0],ru:"Translation may miss cultural meanings, values and associations behind words.",kz:"Translation words артындағы cultural meanings, values және associations толық бере алмауы мүмкін.",source:"POFLIC, Unit 4.2"},
-{type:"multiple",q:"24. Studying languages and cultures can help people:",options:["understand other worldviews","communicate across cultures","develop intercultural awareness","avoid all social contact","reject their own language"],answers:[0,1,2],ru:"Language and culture learning supports intercultural awareness and cross-cultural communication.",kz:"Language and culture learning intercultural awareness және cross-cultural communication дамытады.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"25. Intercultural awareness means:",options:["understanding one’s own and other cultures","knowing only one’s own culture","rejecting cultural differences","avoiding foreign languages","ignoring behaviour"],answers:[0],ru:"Intercultural awareness means understanding similarities and differences between cultures.",kz:"Intercultural awareness — өз culture және other cultures арасындағы similarities/differences түсіну.",source:"POFLIC, Unit 4.2"},
-{type:"multiple",q:"26. Intercultural awareness involves understanding differences in:",options:["values","beliefs","behaviour","random phone models","weather conditions only"],answers:[0,1,2],ru:"Intercultural differences may involve values, beliefs and behaviour.",kz:"Intercultural differences values, beliefs және behaviour арқылы көрінеді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"27. Intercultural awareness is especially important for:",options:["expatriates","people who never meet anyone","people who avoid communication","only children under five","only historians"],answers:[0],ru:"Expatriates live and work outside their native country, so they need intercultural awareness.",kz:"Expatriates native country сыртында өмір сүріп, жұмыс істейді, сондықтан intercultural awareness қажет.",source:"POFLIC, Unit 4.2"},
-{type:"multiple",q:"28. Groups who need intercultural awareness include:",options:["people who work globally","people in multicultural teams","tourists","people who never interact with others","people who reject all travel"],answers:[0,1,2],ru:"The unit lists globally working people, multicultural teams, tourists and expatriates.",kz:"Unit people who work globally, multicultural teams, tourists және expatriates топтарын атайды.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"29. An expatriate is a person who:",options:["lives and works away from their native country","never leaves home","studies only local history","refuses international work","works only as a tourist guide"],answers:[0],ru:"Expatriates live and work outside their home country.",kz:"Expatriate — өз home country сыртында өмір сүріп, жұмыс істейтін адам.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"30. Language immersion course means:",options:["intensive language learning in a real language environment","learning only from grammar tables","avoiding native speakers","studying without communication","learning only vocabulary lists"],answers:[0],ru:"Language immersion means being surrounded by and actively using the target language.",kz:"Language immersion — target language environment ішінде intensive learning.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"31. A home-stay family is:",options:["a local family that hosts a learner or visitor","a hotel chain","a school exam committee","a group of tourists","a grammar club"],answers:[0],ru:"A home-stay family hosts a person during study or travel abroad.",kz:"Home-stay family — шетелде оқу/саяхат кезінде адамды қабылдайтын local family.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"32. The phrase “to live and breathe a language” means:",options:["to use the language constantly in real life","to stop speaking the language","to translate every word mechanically","to learn only spelling","to avoid communication"],answers:[0],ru:"It means to be fully immersed in the language and use it daily.",kz:"Бұл expression language-ды daily life ішінде constantly қолдануды білдіреді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"33. Authenticity in language learning is connected with:",options:["real-life communication and cultural experience","artificial grammar drills only","avoiding native speakers","memorizing without context","rejecting culture"],answers:[0],ru:"Authentic learning happens through real-life cultural and communicative experience.",kz:"Authentic learning real-life cultural және communicative experience арқылы болады.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"34. A small clause is unusual because it:",options:["lacks an overt verb","always has two finite verbs","contains only adverbs","is always a question","cannot express meaning"],answers:[0],ru:"Small or verbless clauses lack an overt verb.",kz:"Small/verbless clause overt verb жоқ clause.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"35. A subordinate clause is:",options:["a clause dependent on a main or matrix clause","a complete independent text always","a phrase without any subject","a word without grammar","only a preposition"],answers:[0],ru:"A subordinate clause depends on a main or matrix clause for full meaning.",kz:"Subordinate clause толық meaning үшін main/matrix clause-қа тәуелді.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"36. A temporal clause expresses:",options:["time","place only","reason only","contrast only","result only"],answers:[0],ru:"Temporal clauses express time, for example: before, after, when, as soon as.",kz:"Temporal clauses time білдіреді: before, after, when, as soon as.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"37. A conditional clause expresses:",options:["condition","place","identity","heritage","apposition"],answers:[0],ru:"Conditional clauses express a condition, often with if, unless or provided.",kz:"Conditional clauses condition білдіреді: if, unless, provided.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"38. A concessive clause expresses:",options:["contrast or unexpected result","only time","only place","only identity","only direct speech"],answers:[0],ru:"Concessive clauses express contrast, for example: although, even though, while.",kz:"Concessive clauses contrast білдіреді: although, even though, while.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"39. A reason clause expresses:",options:["cause","comparison only","place only","identity only","cultural heritage only"],answers:[0],ru:"Reason clauses explain why something happens, often with because, since or as.",kz:"Reason clauses cause түсіндіреді: because, since, as.",source:"POFLIC, Unit 4.2"},
-{type:"single",q:"40. A result clause expresses:",options:["consequence","nationality","age identity","translation only","grammar category only"],answers:[0],ru:"Result clauses show consequence, often with so.",kz:"Result clauses consequence көрсетеді, жиі so арқылы.",source:"POFLIC, Unit 4.2"}
+{
+type:"single",
+q:"1. Cultural identity refers to:",
+options:[
+"identification with a particular cultural group",
+"only a person’s physical appearance",
+"only economic status",
+"only school performance",
+"refusal of belonging"
+],
+answers:[0],
+ru:"Культурная идентичность означает отождествление себя с определённой культурной группой или чувство принадлежности к ней.",
+kz:"Cultural identity — белгілі бір cultural group-пен өзін байланыстыру немесе belonging сезімі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"multiple",
+q:"2. Cultural identity may be based on:",
+options:[
+"nationality",
+"ethnicity",
+"religion",
+"weather conditions",
+"random numbers"
+],
+answers:[0,1,2],
+ru:"Культурная идентичность может основываться на национальности, этничности, расе, гендере, религии и других культурных категориях.",
+kz:"Cultural identity nationality, ethnicity, race, gender, religion сияқты cultural categories негізінде қалыптасуы мүмкін.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"3. Cultural identity is constructed and maintained through:",
+options:[
+"sharing collective knowledge",
+"ignoring traditions",
+"rejecting language",
+"avoiding communication",
+"forgetting heritage"
+],
+answers:[0],
+ru:"Культурная идентичность формируется и поддерживается через коллективные знания: традиции, наследие, язык, нормы и обычаи.",
+kz:"Cultural identity traditions, heritage, language, norms және customs сияқты collective knowledge арқылы constructed және maintained болады.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"multiple",
+q:"4. Collective knowledge may include:",
+options:[
+"traditions",
+"heritage",
+"language",
+"only personal salary",
+"only weather forecasts"
+],
+answers:[0,1,2],
+ru:"Коллективные знания включают традиции, наследие, язык, эстетику, нормы и обычаи.",
+kz:"Collective knowledge traditions, heritage, language, aesthetics, norms және customs қамтиды.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"5. Cultural identity is complex because individuals:",
+options:[
+"usually belong to more than one cultural group",
+"belong to no group at all",
+"have no social context",
+"cannot communicate",
+"never change"
+],
+answers:[0],
+ru:"Культурная идентичность сложна, потому что человек обычно связан не с одной, а с несколькими культурными группами.",
+kz:"Cultural identity complex, себебі individuals көбіне бір емес, бірнеше cultural group-пен affiliate етеді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"6. In the globalized world, cultural identity is:",
+options:[
+"constantly enacted, negotiated, maintained and challenged",
+"always fixed and never changes",
+"not connected with communication",
+"only biological",
+"only geographical"
+],
+answers:[0],
+ru:"В глобализированном мире культурная идентичность постоянно проявляется, обсуждается, поддерживается и подвергается вызовам через коммуникацию.",
+kz:"Globalized world ішінде cultural identity communicative practices арқылы enacted, negotiated, maintained және challenged болады.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"7. Intercultural dialogue helps people:",
+options:[
+"see similarities and differences with others",
+"avoid all cultural comparison",
+"reject their own identity",
+"stop communicating",
+"remove cultural heritage"
+],
+answers:[0],
+ru:"Межкультурный диалог помогает людям видеть сходства и различия с другими и лучше понимать собственную идентичность.",
+kz:"Intercultural dialogue people-ға others-пен similarities және differences көруге, өз identity түсінуге көмектеседі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"8. Cultural heritage is important because it:",
+options:[
+"forms the roots of identity",
+"destroys cultural memory",
+"has no relation to people",
+"exists only in museums",
+"removes traditions"
+],
+answers:[0],
+ru:"Культурное наследие важно, потому что оно является основой культурной памяти и идентичности народа.",
+kz:"Cultural heritage important, себебі ол cultural memory және identity негізі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"9. Personal identity means:",
+options:[
+"one’s sense of self as an individual",
+"only national symbols",
+"only group traditions",
+"only professional status",
+"absence of self-awareness"
+],
+answers:[0],
+ru:"Личная идентичность — это понимание человеком самого себя как отдельной личности.",
+kz:"Personal identity — адамның өзін individual ретінде түсінуі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"10. National identity refers to:",
+options:[
+"a sense of belonging to a nation",
+"only family hobbies",
+"only personal appearance",
+"only school discipline",
+"only online communication"
+],
+answers:[0],
+ru:"Национальная идентичность означает чувство принадлежности к определённой нации.",
+kz:"National identity — белгілі бір nation-ға belonging сезімі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"11. Ethnic identity refers to:",
+options:[
+"belonging to an ethnic group with shared culture or origin",
+"only personal income",
+"only internet habits",
+"only professional title",
+"only age"
+],
+answers:[0],
+ru:"Этническая идентичность связана с принадлежностью к этнической группе, имеющей общую культуру, происхождение или традиции.",
+kz:"Ethnic identity — ортақ culture, origin немесе traditions бар ethnic group-қа belonging.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"12. Regional identity means:",
+options:[
+"identification with a particular region or local area",
+"only global citizenship",
+"only religion",
+"only gender role",
+"only academic success"
+],
+answers:[0],
+ru:"Региональная идентичность означает связь человека с определённым регионом или местностью.",
+kz:"Regional identity — адамның белгілі region немесе local area-мен байланысы.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"13. Plurality of identity means that:",
+options:[
+"a person may have several identities at the same time",
+"a person can have only one fixed identity",
+"identity never changes",
+"identity is only legal status",
+"identity excludes culture"
+],
+answers:[0],
+ru:"Множественность идентичности означает, что у человека может быть несколько идентичностей одновременно.",
+kz:"Plurality of identity — адамда бір уақытта several identities болуы мүмкін.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"14. Avowal means:",
+options:[
+"how people define or present their own identity",
+"how others label a person",
+"loss of all identity",
+"official translation",
+"rejection of culture"
+],
+answers:[0],
+ru:"Avowal означает то, как человек сам определяет и представляет свою идентичность.",
+kz:"Avowal — адамның өз identity-ін өзі define немесе present етуі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"15. Ascription means:",
+options:[
+"how others define or assign identity to a person",
+"how a person defines himself only",
+"absence of social judgement",
+"study of grammar clauses",
+"personal choice only"
+],
+answers:[0],
+ru:"Ascription означает то, как другие люди определяют или приписывают человеку определённую идентичность.",
+kz:"Ascription — others адамның identity-ін define немесе assign етуі.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"multiple",
+q:"16. Properties of cultural identity may include:",
+options:[
+"plurality of identity",
+"avowal and ascription",
+"enduring and changing aspects",
+"chemical composition",
+"mathematical sequence"
+],
+answers:[0,1,2],
+ru:"К свойствам культурной идентичности относятся множественность, самоназвание и приписывание, а также устойчивые и изменяющиеся аспекты.",
+kz:"Cultural identity properties: plurality, avowal and ascription, enduring and changing aspects.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"17. Language is related to culture because it:",
+options:[
+"represents cultural meanings and ways of seeing the world",
+"is only a list of grammar rules",
+"has no connection with identity",
+"removes cultural memory",
+"exists without people"
+],
+answers:[0],
+ru:"Язык связан с культурой, потому что он отражает культурные значения и способы восприятия мира.",
+kz:"Language culture-пен байланысты, себебі ол cultural meanings және world view көрсетеді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"18. The term “linguaculture” connects:",
+options:[
+"language and culture",
+"law and economy",
+"biology and chemistry",
+"tourism and transport",
+"grammar and sport"
+],
+answers:[0],
+ru:"Термин linguaculture показывает тесную связь языка и культуры.",
+kz:"Linguaculture — language пен culture арасындағы тығыз байланысты көрсететін term.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"19. Language can be seen as a window into:",
+options:[
+"how people from a culture see the world",
+"only pronunciation rules",
+"only school exams",
+"only official documents",
+"only economic statistics"
+],
+answers:[0],
+ru:"Язык можно рассматривать как окно в то, как представители культуры видят мир.",
+kz:"Language — белгілі culture адамдарының world-ты қалай көретінін көрсететін window.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"20. Benjamin Lee Whorf is associated with the idea that:",
+options:[
+"language can influence how people think",
+"language has no relation to thought",
+"all languages are identical",
+"culture does not affect grammar",
+"communication is only biological"
+],
+answers:[0],
+ru:"Бенджамин Ли Уорф связан с идеей о том, что язык может влиять на мышление и восприятие мира.",
+kz:"Benjamin Lee Whorf language адамның thinking және perception-ына әсер етуі мүмкін деген idea-мен байланысты.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"21. Accurate translation may not be enough because:",
+options:[
+"cultural meanings behind words may differ",
+"words never have meanings",
+"grammar is always identical",
+"culture is irrelevant",
+"translation removes all differences"
+],
+answers:[0],
+ru:"Точного перевода может быть недостаточно, потому что за словами могут стоять разные культурные значения.",
+kz:"Accurate translation жеткіліксіз болуы мүмкін, себебі words артында different cultural meanings болуы мүмкін.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"22. Intercultural awareness means:",
+options:[
+"understanding one’s own and other cultures",
+"knowing only one’s own culture",
+"rejecting other cultures",
+"memorizing idioms only",
+"avoiding foreign languages"
+],
+answers:[0],
+ru:"Межкультурная осведомлённость означает понимание как собственной культуры, так и культур других людей.",
+kz:"Intercultural awareness — own culture және other cultures түсіну.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"23. Intercultural awareness is especially important for:",
+options:[
+"expatriates and people working in multicultural teams",
+"people who never communicate",
+"only people without jobs",
+"only children under five",
+"people who avoid travel"
+],
+answers:[0],
+ru:"Межкультурная осведомлённость особенно важна для экспатов, людей, работающих глобально, multicultural teams и туристов.",
+kz:"Intercultural awareness expatriates, globally working people, multicultural teams және tourists үшін important.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"multiple",
+q:"24. Groups that need intercultural awareness include:",
+options:[
+"expatriates",
+"people who work globally",
+"tourists",
+"people who never meet others",
+"people who reject all cultures"
+],
+answers:[0,1,2],
+ru:"Межкультурная осведомлённость нужна экспатам, людям, работающим в глобальной среде, multicultural teams и туристам.",
+kz:"Intercultural awareness expatriates, globally working people, multicultural teams және tourists үшін қажет.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"25. Expatriates are people who:",
+options:[
+"live and work away from their native country",
+"never leave their hometown",
+"study only local traditions",
+"avoid all international work",
+"do not need adaptation"
+],
+answers:[0],
+ru:"Экспаты — это люди, которые живут и работают за пределами своей родной страны.",
+kz:"Expatriates — өз native country-ден тыс жерде living and working people.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"26. “When in Rome, do as the Romans do” means:",
+options:[
+"adapt to the customs of the place you visit",
+"ignore local customs",
+"refuse cultural learning",
+"avoid communication abroad",
+"criticize every tradition"
+],
+answers:[0],
+ru:"Эта фраза означает, что в другой стране или культуре нужно уважать и учитывать местные обычаи.",
+kz:"Бұл phrase басқа culture немесе country ішінде local customs-қа adapt ету керек дегенді білдіреді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"27. Language immersion course means:",
+options:[
+"learning a language by living in or deeply engaging with its environment",
+"learning only from grammar tables",
+"studying without communication",
+"translating words only",
+"avoiding native speakers"
+],
+answers:[0],
+ru:"Языковое погружение означает изучение языка через жизнь или активное общение в языковой и культурной среде.",
+kz:"Language immersion — language environment ішінде living немесе active communication арқылы language learning.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"28. Home-stay means:",
+options:[
+"living with a local family while studying or travelling",
+"staying alone in a hotel only",
+"studying without cultural contact",
+"living in an airport",
+"avoiding local people"
+],
+answers:[0],
+ru:"Home-stay означает проживание в местной семье во время обучения или путешествия.",
+kz:"Home-stay — оқу немесе travel кезінде local family-мен бірге тұру.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"29. Cultural adaptation means:",
+options:[
+"adjusting to a new cultural environment",
+"forgetting all traditions",
+"refusing to learn",
+"avoiding people",
+"rejecting local customs"
+],
+answers:[0],
+ru:"Культурная адаптация — это приспособление к новой культурной среде.",
+kz:"Cultural adaptation — new cultural environment-ке бейімделу.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"30. Cultural integration means:",
+options:[
+"becoming part of a new society while interacting with its culture",
+"complete isolation",
+"rejection of all communication",
+"loss of all personal identity",
+"avoiding social contact"
+],
+answers:[0],
+ru:"Культурная интеграция означает включение человека в новое общество через взаимодействие с его культурой.",
+kz:"Cultural integration — new society бөлігі болып, оның culture-мен interact ету.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"31. A subordinate clause is:",
+options:[
+"a clause that depends on a main clause",
+"a complete independent sentence only",
+"a noun phrase only",
+"a single adjective",
+"a punctuation mark"
+],
+answers:[0],
+ru:"Придаточное предложение зависит от главного предложения и не всегда может самостоятельно передать полный смысл.",
+kz:"Subordinate clause main clause-қа dependent болады және өздігінен complete meaning бере алмауы мүмкін.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"32. A temporal clause expresses:",
+options:[
+"time",
+"place only",
+"reason only",
+"contrast only",
+"comparison only"
+],
+answers:[0],
+ru:"Временное придаточное предложение выражает время действия.",
+kz:"Temporal clause action-ның time-ын білдіреді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"33. A conditional clause expresses:",
+options:[
+"condition",
+"time only",
+"place only",
+"result only",
+"identity only"
+],
+answers:[0],
+ru:"Условное придаточное предложение выражает условие, при котором что-то может произойти.",
+kz:"Conditional clause белгілі condition орындалғанда болатын action-ды білдіреді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"34. A concessive clause expresses:",
+options:[
+"contrast or unexpected opposition",
+"only place",
+"only time",
+"only direct speech",
+"only definition"
+],
+answers:[0],
+ru:"Уступительное придаточное предложение выражает контраст или неожиданное противопоставление.",
+kz:"Concessive clause contrast немесе unexpected opposition білдіреді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"35. A reason clause explains:",
+options:[
+"why something happens",
+"where something happens",
+"who owns something",
+"how old someone is",
+"what colour something is"
+],
+answers:[0],
+ru:"Придаточное причины объясняет, почему происходит действие.",
+kz:"Reason clause action неге happening екенін explains етеді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"36. A result clause shows:",
+options:[
+"the consequence of an action",
+"the origin of a person",
+"the name of a place",
+"the title of a book",
+"the identity of a speaker"
+],
+answers:[0],
+ru:"Придаточное результата показывает последствие или результат действия.",
+kz:"Result clause action consequence немесе result көрсетеді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"37. In “After visiting Barcelona, the circus moved on to Madrid”, the clause type is:",
+options:[
+"temporal",
+"conditional",
+"concessive",
+"reason",
+"comparative"
+],
+answers:[0],
+ru:"Слово after указывает на время, поэтому это временное значение.",
+kz:"After time көрсетеді, сондықтан бұл temporal meaning.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"38. In “As he doesn’t drive, David always travels by train”, the clause type is:",
+options:[
+"reason",
+"place",
+"comparative",
+"concessive",
+"result"
+],
+answers:[0],
+ru:"Здесь as означает because, то есть объясняет причину.",
+kz:"Бұл жерде as because мағынасында, яғни reason explains етеді.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"39. In “Even though he worked hard, he failed the exam”, the clause type is:",
+options:[
+"concessive",
+"temporal",
+"place",
+"result",
+"conditional"
+],
+answers:[0],
+ru:"Even though показывает уступку: несмотря на усилия, результат был противоположным.",
+kz:"Even though concession білдіреді: effort болса да, result opposite болды.",
+source:"POFLIC, Unit 4.2"
+},
+{
+type:"single",
+q:"40. In “If you study cultural identity, you will understand society better”, the clause type is:",
+options:[
+"conditional",
+"temporal",
+"place",
+"reason",
+"comparative"
+],
+answers:[0],
+ru:"If вводит условие, поэтому это условное придаточное предложение.",
+kz:"If condition енгізеді, сондықтан бұл conditional clause.",
+source:"POFLIC, Unit 4.2"
+}
 ]
 },
-unit43:{
+ unit43:{
 title:"Unit 4.3 — Moral and Ethical Patterns of the Contemporary Society",
 questions:[
-{type:"single",q:"1. Universal values are values that:",options:["guide human behaviour in society across cultures","belong only to one family","are connected only with material wealth","change every hour","are used only in business contracts"],answers:[0],ru:"Universal values are principles that help people live together in society, such as honesty, tolerance and peace.",kz:"Universal values — адамдардың қоғамда бірге өмір сүруіне көмектесетін principles: honesty, tolerance, peace.",source:"POFLIC, Unit 4.3"},
-{type:"multiple",q:"2. Universal values may include:",options:["honesty","responsibility","tolerance","selfishness","corruption"],answers:[0,1,2],ru:"The unit lists honesty, responsibility, truth, solidarity, cooperation, tolerance, respect and peace as universal values.",kz:"Unit honesty, responsibility, truth, solidarity, cooperation, tolerance, respect және peace universal values ретінде береді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"3. Personal values are:",options:["essential principles on which people build their lives","only official laws","only school marks","only religious ceremonies","only material objects"],answers:[0],ru:"Personal values guide a person’s life and relationships with other people.",kz:"Personal values адамның life және relationships бағытын анықтайтын essential principles.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"4. Family values are mainly derived from:",options:["fundamental beliefs of parents and family upbringing","random advertisements","weather changes","only social media trends","workplace salaries only"],answers:[0],ru:"Family values come from the family and are transmitted through upbringing and behaviour.",kz:"Family values family upbringing және parents’ beliefs арқылы беріледі.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"5. Social-cultural values are:",options:["prevailing values of society that may change with time","values that never change in any society","only personal feelings","only family rules","only biological instincts"],answers:[0],ru:"Social-cultural values are common in society and may change over time.",kz:"Social-cultural values society ішінде prevailing болып, time бойынша өзгеруі мүмкін.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"6. Material values are connected with:",options:["basic human needs such as food, clothing and protection","only spiritual beliefs","only national identity","only grammar rules","only moral education"],answers:[0],ru:"Material values help people survive and are related to basic needs.",kz:"Material values survival және basic needs: food, clothing, protection-пен байланысты.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"7. Spiritual values refer to:",options:["non-material aspects that give meaning to life","only money and property","only physical activity","only clothing","only social status"],answers:[0],ru:"Spiritual values are connected with non-material meaning, fulfilment and beliefs.",kz:"Spiritual values non-material meaning, fulfilment және beliefs-пен байланысты.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"8. Moral values are:",options:["standards of what is right and wrong","only food preferences","only national costumes","only exam strategies","only travel plans"],answers:[0],ru:"Moral values define right and wrong and guide individual behaviour.",kz:"Moral values right and wrong стандарттарын анықтап, behaviour-ды бағыттайды.",source:"POFLIC, Unit 4.3"},
-{type:"multiple",q:"9. Moral values can come from:",options:["family","society","religion","random shopping habits","weather conditions"],answers:[0,1,2],ru:"A person’s moral values can be shaped by family, society, religion and self.",kz:"Moral values family, society, religion және self арқылы қалыптасуы мүмкін.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"10. A strong moral foundation in society is important because it:",options:["supports coexistence, order and general well-being","encourages corruption","destroys responsibility","prevents education","rejects social life"],answers:[0],ru:"Moral values help society maintain order, coexistence and well-being.",kz:"Moral values society ішінде coexistence, order және well-being сақтауға көмектеседі.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"11. Self-centeredness means:",options:["being concerned only about oneself","caring about society first","helping others without benefit","acting with solidarity","developing cooperation"],answers:[0],ru:"Self-centeredness means focusing only on personal benefit and ignoring society.",kz:"Self-centeredness — тек oneself benefit ойлап, society-ді disregard ету.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"12. Moral education should begin early because:",options:["children need time to internalize moral values","values are learned only in adulthood","schools should avoid morality","children cannot learn values","family has no role in upbringing"],answers:[0],ru:"Moral education takes time, so it should begin when children are young.",kz:"Moral education уақыт алады, сондықтан ол бала кезден басталуы керек.",source:"POFLIC, Unit 4.3"},
-{type:"multiple",q:"13. Moral education may be supported by:",options:["family","school","teachers’ good example","dishonesty","corruption"],answers:[0,1,2],ru:"Families, schools and teachers can help children develop moral values.",kz:"Families, schools және teachers балалардың moral values дамытуына көмектеседі.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"14. To internalize a value means:",options:["to accept it deeply as part of one’s own behaviour","to forget it immediately","to write it only once","to reject it in practice","to copy it without understanding"],answers:[0],ru:"Internalizing a value means making it part of one’s inner beliefs and behaviour.",kz:"Internalize — value-ды inner belief және behaviour бөлігіне айналдыру.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"15. To emulate someone means:",options:["to follow or imitate their example","to ignore their behaviour","to punish them","to avoid learning from them","to reject their values"],answers:[0],ru:"Children emulate adults by copying their actions and behaviour.",kz:"Children adults actions және behaviour-ды copy ету арқылы emulate етеді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"16. To set a good example means:",options:["to behave in a way others can follow positively","to give only abstract lectures","to avoid responsibility","to promote dishonesty","to refuse moral behaviour"],answers:[0],ru:"Parents and teachers teach values not only by words, but also by example.",kz:"Parents және teachers values-ты сөзбен ғана емес, example арқылы үйретеді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"17. Good governance requires:",options:["officials with good moral values and responsibility","corruption and selfishness","weak moral foundation","lack of public responsibility","rejection of ethics"],answers:[0],ru:"Good governance is connected with moral responsibility and ethical behaviour of officials.",kz:"Good governance officials-тің moral responsibility және ethical behaviour-ымен байланысты.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"18. Corruption is likely to decrease when:",options:["moral values and responsibility are strong","selfishness is encouraged","society ignores ethics","education rejects values","officials avoid accountability"],answers:[0],ru:"A strong moral foundation can reduce corruption and improve society.",kz:"Strong moral foundation corruption-ды азайтып, society-ді improve етеді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"19. Intrinsic motivation means:",options:["motivation coming from within a person","motivation based only on external rewards","pressure from punishment only","motivation caused by advertising only","absence of motivation"],answers:[0],ru:"Intrinsic motivation comes from inner values, interest or personal meaning.",kz:"Intrinsic motivation inner values, interest немесе personal meaning арқылы келеді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"20. Extrinsic motivation means:",options:["motivation caused by external rewards or pressure","motivation from inner values only","moral intuition only","spiritual fulfilment only","absence of external influence"],answers:[0],ru:"Extrinsic motivation comes from outside, such as rewards, grades, money or pressure.",kz:"Extrinsic motivation сыртқы factors арқылы келеді: rewards, grades, money, pressure.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"21. A clause of purpose expresses:",options:["why an action is done","where an action happens","who owns something","what identity means","what value is universal"],answers:[0],ru:"Purpose clauses explain the aim of an action.",kz:"Purpose clauses action-ның aim/purpose-ын түсіндіреді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"22. Choose the sentence with a purpose clause.",options:["David went out to buy a bottle of wine.","David went out after dinner.","David went out because he was tired.","David went out although it rained.","David went out when I arrived."],answers:[0],ru:"“To buy a bottle of wine” explains the purpose of going out.",kz:"“To buy a bottle of wine” — going out action-ның purpose-ын білдіреді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"23. “In order to” is used to express:",options:["purpose","contrast","place","identity","comparison"],answers:[0],ru:"“In order to” is a formal way to express purpose.",kz:"“In order to” purpose білдіретін formal structure.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"24. “So as not to” expresses:",options:["negative purpose","past habit","place","comparison","possession"],answers:[0],ru:"“So as not to” means “in order not to” and expresses negative purpose.",kz:"“So as not to” — “in order not to” мағынасында, negative purpose білдіреді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"25. “In case” is used when:",options:["people take precautions against a possible situation","people compare two cultures","people define identity","people describe a place","people give a result only"],answers:[0],ru:"“In case” is used to describe precautions against something that may happen.",kz:"“In case” possible situation-ға қарсы precaution көрсету үшін қолданылады.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"26. The structure “prevent + noun/pronoun + from + -ing” expresses:",options:["stopping something from happening","encouraging an action","comparing values","defining identity","describing time"],answers:[0],ru:"This structure means to stop someone or something from doing something.",kz:"“Prevent + object + from + -ing” — бір нәрсенің болуына жол бермеу.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"27. Ethics is mainly concerned with:",options:["principles of right and wrong behaviour","only economic profit","only grammar forms","only national symbols","only physical health"],answers:[0],ru:"Ethics studies right and wrong conduct and moral responsibility.",kz:"Ethics right and wrong behaviour, moral responsibility мәселелерін зерттейді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"28. Academic integrity means:",options:["honesty and responsibility in academic work","cheating successfully","ignoring plagiarism","avoiding responsibility","copying without citation"],answers:[0],ru:"Academic integrity involves honesty, responsibility and ethical behaviour in study.",kz:"Academic integrity — study ішінде honesty, responsibility және ethical behaviour.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"29. Public responsibility means:",options:["responsibility toward society and the public good","caring only about personal profit","avoiding social duties","rejecting moral values","hiding public problems"],answers:[0],ru:"Public responsibility means acting with concern for society and common good.",kz:"Public responsibility — society және common good үшін жауапкершілікпен әрекет ету.",source:"POFLIC, Unit 4.3"},
-{type:"multiple",q:"30. Good values in children can be taught through:",options:["discussion","example","quality time","violent media only","neglect"],answers:[0,1,2],ru:"The unit emphasizes discussing values, leading by example and sharing quality time.",kz:"Unit values discussion, example және quality time арқылы үйретілетінін көрсетеді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"31. Open-ended questions are questions that:",options:["encourage detailed answers and reflection","require only “yes” or “no”","prevent discussion","have no relation to communication","are used only in mathematics"],answers:[0],ru:"Open-ended questions encourage children to explain feelings and thoughts.",kz:"Open-ended questions children-ге feelings және thoughts түсіндіруге мүмкіндік береді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"32. To impart moral values means:",options:["to teach or pass moral values to someone","to hide moral values","to reject moral education","to forget ethical principles","to avoid communication"],answers:[0],ru:"“To impart” means to give, teach or communicate knowledge or values.",kz:"“To impart” — knowledge немесе values-ты teach/pass ету.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"33. Social responsibility means:",options:["responsibility toward society and other people","avoiding community life","focusing only on personal gain","rejecting public problems","ignoring ethical behaviour"],answers:[0],ru:"Social responsibility involves caring about society, community and other people.",kz:"Social responsibility society, community және other people үшін жауапкершілік білдіреді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"34. Peer pressure means:",options:["influence from people of the same age or social group","pressure from weather","influence from grammar rules","only parental advice","a legal document"],answers:[0],ru:"Peer pressure is influence from peers, especially among adolescents.",kz:"Peer pressure — peers, әсіресе adolescents арасындағы influence.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"35. Adolescents are:",options:["young people between childhood and adulthood","only elderly people","only infants","only university professors","only parents"],answers:[0],ru:"Adolescents are teenagers or young people developing from childhood to adulthood.",kz:"Adolescents — childhood пен adulthood арасындағы young people.",source:"POFLIC, Unit 4.3"},
-{type:"multiple",q:"36. Media can support value education if it promotes:",options:["positive values","moral lessons","uplifting content","violence only","crime-focused behaviour only"],answers:[0,1,2],ru:"The unit recommends using books and programmes that support positive values and moral lessons.",kz:"Unit positive values және moral lessons қолдайтын books/programmes қолдануды ұсынады.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"37. Cultural profile means:",options:["a description of a country’s cultural features, values and traditions","a financial report only","a grammar table","a medical document","a tourist ticket"],answers:[0],ru:"A cultural profile describes cultural characteristics of a country or society.",kz:"Cultural profile country немесе society-дің cultural characteristics сипаттайды.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"38. Westernization means:",options:["influence of Western culture on other societies","preservation of all local traditions only","rejection of globalization","only learning foreign grammar","only travelling to the East"],answers:[0],ru:"Westernization is the spread or influence of Western cultural patterns.",kz:"Westernization — Western cultural patterns-тің басқа societies-ге influence етуі.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"39. The expression “timeless without being stuck in the past” means:",options:["preserving tradition while still belonging to the present","refusing all traditions","rejecting modernity completely","having no culture","living only in the past"],answers:[0],ru:"It means a culture may preserve traditions without being backward or frozen in history.",kz:"Бұл expression culture traditions сақтай отырып, backward болмай, present ішінде өмір сүретінін білдіреді.",source:"POFLIC, Unit 4.3"},
-{type:"single",q:"40. Cultural education is important because it:",options:["supports identity, values and intercultural understanding","destroys moral development","prevents respect for heritage","rejects personality development","teaches only economic profit"],answers:[0],ru:"Cultural education develops identity, values, respect for heritage and intercultural understanding.",kz:"Cultural education identity, values, heritage-ке respect және intercultural understanding дамытады.",source:"POFLIC, Unit 4.3"}
+{
+type:"single",
+q:"1. Universal values are values that:",
+options:[
+"guide human behaviour in society",
+"exist only in one family",
+"belong only to one profession",
+"change every minute",
+"are connected only with money"
+],
+answers:[0],
+ru:"Универсальные ценности помогают людям регулировать поведение в обществе и строить отношения с другими.",
+kz:"Universal values қоғамдағы human behaviour бағыттап, others-пен relation құруға көмектеседі.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"multiple",
+q:"2. Examples of universal values include:",
+options:[
+"honesty",
+"responsibility",
+"tolerance",
+"selfishness only",
+"crime"
+],
+answers:[0,1,2],
+ru:"К универсальным ценностям относятся честность, ответственность, правда, солидарность, сотрудничество, толерантность, уважение и мир.",
+kz:"Universal values: honesty, responsibility, truth, solidarity, cooperation, tolerance, respect және peace.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"3. Personal values are:",
+options:[
+"essential principles on which people build their lives",
+"only government rules",
+"only school subjects",
+"only material objects",
+"random habits without meaning"
+],
+answers:[0],
+ru:"Личные ценности — это основные принципы, на которых человек строит свою жизнь и отношения с другими людьми.",
+kz:"Personal values — адамның life және relationships құруына негіз болатын essential principles.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"4. Family values usually come from:",
+options:[
+"fundamental beliefs of parents and family upbringing",
+"only social media",
+"only state documents",
+"only foreign films",
+"only economic reports"
+],
+answers:[0],
+ru:"Семейные ценности формируются в семье и часто исходят из основных убеждений родителей и семейного воспитания.",
+kz:"Family values family ішінде қалыптасып, parents beliefs және upbringing арқылы беріледі.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"5. Social-cultural values are:",
+options:[
+"prevailing values of society that may change with time",
+"values that never change in any society",
+"only personal dreams",
+"only biological instincts",
+"only family income"
+],
+answers:[0],
+ru:"Социокультурные ценности — это преобладающие ценности общества, которые могут меняться со временем.",
+kz:"Social-cultural values — society ішіндегі prevailing values, олар time бойынша өзгеруі мүмкін.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"6. Material values are related to:",
+options:[
+"basic human needs such as food, clothing and protection",
+"only religious beliefs",
+"only moral principles",
+"only cultural memory",
+"only language learning"
+],
+answers:[0],
+ru:"Материальные ценности связаны с базовыми человеческими потребностями: едой, одеждой и защитой.",
+kz:"Material values food, clothing және protection сияқты basic human needs-пен байланысты.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"7. Spiritual values refer to:",
+options:[
+"non-material aspects that give meaning to life",
+"only money and property",
+"only food and clothing",
+"only physical appearance",
+"only technical devices"
+],
+answers:[0],
+ru:"Духовные ценности относятся к нематериальным аспектам жизни, которые придают ей смысл и внутреннюю основу.",
+kz:"Spiritual values — life-қа meaning беретін non-material aspects.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"8. Moral values are:",
+options:[
+"standards of right and wrong behaviour",
+"only technological skills",
+"only financial goals",
+"only national holidays",
+"only personal hobbies"
+],
+answers:[0],
+ru:"Моральные ценности — это представления о правильном и неправильном поведении.",
+kz:"Moral values — right and wrong behaviour туралы standards.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"multiple",
+q:"9. Moral values can come from:",
+options:[
+"family",
+"society",
+"religion",
+"weather conditions",
+"random numbers"
+],
+answers:[0,1,2],
+ru:"Моральные ценности могут формироваться под влиянием семьи, общества, религии и личного опыта.",
+kz:"Moral values family, society, religion және personal experience арқылы қалыптасуы мүмкін.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"10. Morals act as:",
+options:[
+"motivation for leading a good life",
+"only a technical rule",
+"only a school timetable",
+"only entertainment",
+"only a political slogan"
+],
+answers:[0],
+ru:"Мораль помогает человеку стремиться к хорошей жизни и правильному поведению.",
+kz:"Morals адамды good life және proper behaviour-ға motivate етеді.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"11. Values can be described as:",
+options:[
+"personal fundamental beliefs or principles",
+"only temporary jokes",
+"only grammar rules",
+"only physical needs",
+"only public transport rules"
+],
+answers:[0],
+ru:"Ценности — это основные убеждения или принципы, которыми человек руководствуется в жизни.",
+kz:"Values — адам life ішінде басшылыққа алатын fundamental beliefs немесе principles.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"12. A strong moral foundation in society is important because it:",
+options:[
+"supports responsible and ethical behaviour",
+"encourages selfishness only",
+"destroys social trust",
+"makes education unnecessary",
+"removes all laws"
+],
+answers:[0],
+ru:"Сильная моральная основа общества поддерживает ответственное, честное и этичное поведение людей.",
+kz:"Strong moral foundation responsible, honest және ethical behaviour қолдайды.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"13. Moral education should begin early because:",
+options:[
+"children need time to internalize values",
+"children cannot learn anything",
+"values are only for adults",
+"schools should avoid morals",
+"family has no influence"
+],
+answers:[0],
+ru:"Моральное воспитание должно начинаться рано, потому что ребёнку нужно время, чтобы усвоить ценности.",
+kz:"Moral education early басталуы керек, себебі children values internalize ету үшін time need етеді.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"multiple",
+q:"14. Responsibility for children’s moral education belongs to:",
+options:[
+"family",
+"school",
+"society",
+"technology only",
+"children’s toys only"
+],
+answers:[0,1,2],
+ru:"За моральное воспитание детей отвечают семья, школа и общество.",
+kz:"Children moral education үшін family, school және society жауапты.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"15. Parents are important in moral education because they:",
+options:[
+"are the first teachers children encounter and emulate",
+"have no influence on children",
+"teach only mathematics",
+"replace society completely",
+"should avoid setting examples"
+],
+answers:[0],
+ru:"Родители важны, потому что они являются первыми учителями, которых ребёнок видит и которым подражает.",
+kz:"Parents important, себебі олар children encounter және emulate ететін first teachers.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"16. To emulate means:",
+options:[
+"to imitate or follow someone’s example",
+"to ignore completely",
+"to punish unfairly",
+"to remove values",
+"to avoid learning"
+],
+answers:[0],
+ru:"Emulate означает подражать кому-то или следовать чьему-то примеру.",
+kz:"Emulate — біреуге imitate ету немесе оның example follow ету.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"17. To internalize values means:",
+options:[
+"to absorb values so they become part of one’s behaviour",
+"to forget all values",
+"to write values only on paper",
+"to reject moral education",
+"to memorize words without meaning"
+],
+answers:[0],
+ru:"Internalize values означает усвоить ценности так, чтобы они стали частью поведения человека.",
+kz:"Internalize values — values адамның behaviour бөлігіне айналатындай absorb ету.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"18. Setting a good example means:",
+options:[
+"showing positive behaviour for others to follow",
+"only giving orders",
+"criticizing others without action",
+"avoiding responsibility",
+"teaching without behaviour"
+],
+answers:[0],
+ru:"Подавать хороший пример означает демонстрировать положительное поведение, которому другие могут следовать.",
+kz:"Setting a good example — others follow ете алатын positive behaviour көрсету.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"19. Good governance is supported by:",
+options:[
+"officials with strong moral values",
+"corruption only",
+"lack of responsibility",
+"absence of ethics",
+"personal benefit only"
+],
+answers:[0],
+ru:"Хорошее управление поддерживается ответственными руководителями и чиновниками с сильными моральными ценностями.",
+kz:"Good governance strong moral values бар officials арқылы supported болады.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"20. Corruption can be minimized when:",
+options:[
+"moral values and responsibility are strong",
+"self-interest is the only principle",
+"ethics is ignored",
+"laws are never followed",
+"education is removed"
+],
+answers:[0],
+ru:"Коррупцию можно уменьшить, если в обществе сильны моральные ценности, ответственность и этическое поведение.",
+kz:"Corruption moral values, responsibility және ethical behaviour strong болғанда minimized болуы мүмкін.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"21. “To disregard society” means:",
+options:[
+"to ignore the interests and needs of society",
+"to serve society honestly",
+"to protect public values",
+"to respect people",
+"to build social trust"
+],
+answers:[0],
+ru:"Disregard society означает игнорировать интересы и потребности общества.",
+kz:"Disregard society — society interests және needs ignore ету.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"22. “To prosper” means:",
+options:[
+"to develop successfully",
+"to collapse completely",
+"to remain poor",
+"to lose stability",
+"to avoid progress"
+],
+answers:[0],
+ru:"To prosper означает успешно развиваться, процветать и достигать благополучия.",
+kz:"To prosper — successfully develop ету, flourish ету.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"23. “To follow suit” means:",
+options:[
+"to do the same as someone else",
+"to disagree immediately",
+"to refuse an example",
+"to create a conflict",
+"to stop communication"
+],
+answers:[0],
+ru:"To follow suit означает поступить так же, как кто-то другой.",
+kz:"To follow suit — біреудің жасағанын қайталау, same action жасау.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"24. A “solid foundation” means:",
+options:[
+"a strong and stable basis",
+"a weak argument",
+"a temporary opinion",
+"a random decision",
+"a useless detail"
+],
+answers:[0],
+ru:"Solid foundation означает прочную и устойчивую основу.",
+kz:"Solid foundation — strong және stable basis.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"25. Intrinsic motivation means:",
+options:[
+"motivation that comes from within a person",
+"motivation based only on punishment",
+"motivation caused only by money",
+"motivation from weather",
+"motivation without values"
+],
+answers:[0],
+ru:"Внутренняя мотивация исходит из самого человека, его интересов, убеждений и ценностей.",
+kz:"Intrinsic motivation адамның ішінен, interests, beliefs және values арқылы comes.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"26. Extrinsic motivation means:",
+options:[
+"motivation caused by external rewards or pressure",
+"motivation from inner values only",
+"complete absence of motivation",
+"moral intuition only",
+"spiritual belief only"
+],
+answers:[0],
+ru:"Внешняя мотивация возникает из-за внешних наград, давления или ожиданий.",
+kz:"Extrinsic motivation external rewards, pressure немесе expectations арқылы пайда болады.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"27. A clause of purpose expresses:",
+options:[
+"why an action is done",
+"when an action happened",
+"where someone lives",
+"who owns an object",
+"what colour something is"
+],
+answers:[0],
+ru:"Придаточное цели объясняет, зачем или с какой целью выполняется действие.",
+kz:"Clause of purpose action не үшін немесе қандай purpose үшін жасалғанын explains етеді.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"28. “To + infinitive” can express:",
+options:[
+"purpose",
+"possession",
+"comparison only",
+"past habit only",
+"direct quotation only"
+],
+answers:[0],
+ru:"Конструкция to + infinitive может выражать цель действия.",
+kz:"To + infinitive action purpose білдіруі мүмкін.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"29. “In order to” is used to express:",
+options:[
+"purpose in a more formal way",
+"only contrast",
+"only condition",
+"only time",
+"only place"
+],
+answers:[0],
+ru:"In order to используется для выражения цели, обычно в более формальном стиле.",
+kz:"In order to purpose білдіреді және көбіне formal style ішінде қолданылады.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"30. “So as not to” expresses:",
+options:[
+"negative purpose",
+"past result",
+"place",
+"comparison",
+"direct speech"
+],
+answers:[0],
+ru:"So as not to выражает отрицательную цель: чтобы не сделать что-либо.",
+kz:"So as not to negative purpose білдіреді: бір нәрсені жасамау үшін.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"31. “In case” is used when:",
+options:[
+"we take precautions against a possible situation",
+"we compare two people",
+"we describe only identity",
+"we ask a direct question",
+"we define a noun"
+],
+answers:[0],
+ru:"In case используется, когда мы принимаем меры на случай возможной ситуации.",
+kz:"In case possible situation үшін алдын ала precaution жасау мағынасында қолданылады.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"32. In “He studied hard to pass the exam”, “to pass the exam” shows:",
+options:[
+"purpose",
+"place",
+"contrast",
+"possession",
+"identity"
+],
+answers:[0],
+ru:"Фраза to pass the exam показывает цель: зачем он усердно учился.",
+kz:"To pass the exam purpose көрсетеді: ол не үшін hard studied.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"33. In “They left early so that they could arrive on time”, the clause expresses:",
+options:[
+"purpose",
+"concession",
+"comparison",
+"place",
+"definition"
+],
+answers:[0],
+ru:"So that they could arrive on time выражает цель раннего выхода.",
+kz:"So that they could arrive on time early leaving purpose көрсетеді.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"34. In “Take an umbrella in case it rains”, “in case it rains” means:",
+options:[
+"because rain is possible",
+"although it is sunny",
+"after it rained",
+"where it rains",
+"as soon as it rained"
+],
+answers:[0],
+ru:"In case it rains означает, что дождь возможен, поэтому человек заранее берёт зонт.",
+kz:"In case it rains — rain possible болғандықтан umbrella алдын ала алу.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"35. “For + noun” can express:",
+options:[
+"purpose",
+"concession",
+"identity",
+"direct speech",
+"passive voice"
+],
+answers:[0],
+ru:"Конструкция for + noun может выражать цель, например: went out for a pizza.",
+kz:"For + noun purpose білдіруі мүмкін, мысалы: went out for a pizza.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"36. “For + -ing” can express:",
+options:[
+"purpose or function of something",
+"only past action",
+"only personal identity",
+"only contrast",
+"only reported speech"
+],
+answers:[0],
+ru:"For + -ing может выражать цель или функцию предмета.",
+kz:"For + -ing бір нәрсенің purpose немесе function білдіреді.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"37. Ethical behaviour means:",
+options:[
+"behaviour based on moral principles",
+"behaviour based only on personal profit",
+"behaviour without responsibility",
+"behaviour that ignores others",
+"behaviour without values"
+],
+answers:[0],
+ru:"Этичное поведение основано на моральных принципах, ответственности и уважении к другим.",
+kz:"Ethical behaviour moral principles, responsibility және respect for others негізінде болады.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"38. Academic integrity means:",
+options:[
+"honesty and responsibility in academic work",
+"copying without citation",
+"cheating in exams",
+"ignoring rules",
+"selling other people’s work"
+],
+answers:[0],
+ru:"Академическая честность означает честность и ответственность в учебной и научной работе.",
+kz:"Academic integrity — academic work ішіндегі honesty және responsibility.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"39. Cultural profile means:",
+options:[
+"a description of a culture’s values, traditions and social patterns",
+"only a person’s passport",
+"only a grammar table",
+"only a list of cities",
+"only a travel ticket"
+],
+answers:[0],
+ru:"Культурный профиль описывает ценности, традиции, нормы и социальные особенности определённой культуры.",
+kz:"Cultural profile белгілі culture-дің values, traditions, norms және social patterns сипаттайды.",
+source:"POFLIC, Unit 4.3"
+},
+{
+type:"single",
+q:"40. Traditional skills may disappear when:",
+options:[
+"technology develops and old ways of life are not preserved",
+"people carefully protect cultural heritage",
+"families teach traditions",
+"schools support culture",
+"communities value old practices"
+],
+answers:[0],
+ru:"Традиционные навыки могут исчезнуть, если технологии развиваются, а старые способы жизни и культурные практики не сохраняются.",
+kz:"Traditional skills technology develop болып, old ways of life preserved болмаса disappear болуы мүмкін.",
+source:"POFLIC, Unit 4.3"
+}
 ]
-}
+} 
 };
-function letter(i){
-  return String.fromCharCode(65+i);
-}
 
-function renderUnit(key){
-  const unit=DATA[key];
-  const container=document.getElementById("quiz-"+key);
-  container.innerHTML="";
-  unit.questions.forEach((q,qi)=>{
-    const inputType=q.type==="multiple"?"checkbox":"radio";
-    let html=`<div class="question">
-      <span class="qtype">${q.type==="multiple"?"Multiple answers":"Single answer"}</span>
-      <div class="question-title">${q.q}</div>`;
-    q.options.forEach((opt,oi)=>{
-      html+=`<label><input type="${inputType}" name="${key}-q${qi}" value="${oi}"> ${letter(oi)}) ${opt}</label>`;
-    });
-    html+=`</div>`;
-    container.innerHTML+=html;
-  });
-}
+function renderUnit(unitKey){
+  const unit = DATA[unitKey];
+  const container = document.getElementById("quiz-" + unitKey);
 
-function arraysEqual(a,b){
-  if(a.length!==b.length)return false;
-  const aa=[...a].sort((x,y)=>x-y);
-  const bb=[...b].sort((x,y)=>x-y);
-  return aa.every((v,i)=>v===bb[i]);
-}
+  container.innerHTML = unit.questions.map((q, qi) => {
+    const inputType = q.type === "multiple" ? "checkbox" : "radio";
+    const optionsHTML = q.options.map((opt, oi) => `
+      <label class="option">
+        <input type="${inputType}" name="${unitKey}-q${qi}" value="${oi}">
+        ${String.fromCharCode(65 + oi)}) ${opt}
+      </label>
+    `).join("");
 
-function getSelected(key,qi){
-  return Array.from(document.querySelectorAll(`input[name="${key}-q${qi}"]:checked`)).map(x=>Number(x.value));
-}
-
-function answerText(q,arr){
-  if(!arr||arr.length===0)return "Ответ не выбран";
-  return arr.map(i=>`${letter(i)}) ${q.options[i]}`).join("; ");
-}
-
-function checkUnit(key){
-  const unit=DATA[key];
-  let score=0;
-  let details="";
-  unit.questions.forEach((q,qi)=>{
-    const selected=getSelected(key,qi);
-    const ok=arraysEqual(selected,q.answers);
-    if(ok)score++;
-    details+=`<div class="answer-card ${ok?"correct":"wrong"}">
-      <div class="${ok?"correct-text":"wrong-text"}">${ok?"✔":"✘"} ${q.q}</div>
-      <div class="explain">
-        <b>Правильный ответ:</b> ${answerText(q,q.answers)}<br>
-        <b>Ваш ответ:</b> ${answerText(q,selected)}<br><br>
-        <b>Explanation RU:</b> ${q.ru}<br>
-        <b>Explanation KZ:</b> ${q.kz}<br>
-        <span class="small"><b>Source:</b> ${q.source}</span>
+    return `
+      <div class="question">
+        <div class="qtype">${q.type === "multiple" ? "Multiple answers" : "Single answer"}</div>
+        <div class="question-title">${q.q}</div>
+        ${optionsHTML}
       </div>
-    </div>`;
-  });
-
-  const percent=Math.round(score/unit.questions.length*100);
-  let level=percent>=80?"Жақсы нәтиже / Хороший результат":percent>=50?"Орташа нәтиже / Средний результат":"Қайталау керек / Нужно повторить";
-
-  document.getElementById("result-"+key).innerHTML=`<div class="summary">
-    <h2>${unit.title}</h2>
-    <h2>${score} / ${unit.questions.length} (${percent}%)</h2>
-    <p><b>${level}</b></p>
-  </div>`+details;
-
-  document.getElementById("result-"+key).scrollIntoView({behavior:"smooth",block:"start"});
+    `;
+  }).join("");
 }
 
-renderUnit("unit41");
-renderUnit("unit42");
-renderUnit("unit43");
+function checkUnit(unitKey){
+  const unit = DATA[unitKey];
+  const resultBox = document.getElementById("result-" + unitKey);
 
-document.addEventListener("copy",function(e){
+  let score = 0;
+  let output = "";
+
+  unit.questions.forEach((q, qi) => {
+    const selected = [...document.querySelectorAll(`input[name="${unitKey}-q${qi}"]:checked`)]
+      .map(input => Number(input.value))
+      .sort((a,b) => a-b);
+
+    const correct = [...q.answers].sort((a,b) => a-b);
+
+    const isCorrect =
+      selected.length === correct.length &&
+      selected.every((value, index) => value === correct[index]);
+
+    if(isCorrect){
+      score++;
+    }
+
+    const selectedText = selected.length
+      ? selected.map(i => `${String.fromCharCode(65+i)}) ${q.options[i]}`).join("<br>")
+      : "No answer selected";
+
+    const correctText = correct
+      .map(i => `${String.fromCharCode(65+i)}) ${q.options[i]}`)
+      .join("<br>");
+
+    output += `
+      <div class="answer-card ${isCorrect ? "correct" : "wrong"}">
+        <div><b>${q.q}</b></div>
+        <div class="${isCorrect ? "correct-text" : "wrong-text"}">
+          ${isCorrect ? "Correct" : "Wrong"}
+        </div>
+
+        <div class="explain">
+          <b>Your answer:</b><br>
+          ${selectedText}
+        </div>
+
+        <div class="explain">
+          <b>Correct answer:</b><br>
+          ${correctText}
+        </div>
+
+        <div class="explain">
+          <b>Explanation RU:</b> ${q.ru}<br>
+          <b>Explanation KZ:</b> ${q.kz}
+        </div>
+
+        <span class="source">Source: ${q.source}</span>
+      </div>
+    `;
+  });
+
+  const percent = Math.round((score / unit.questions.length) * 100);
+
+  resultBox.innerHTML = `
+    <div class="summary">
+      <h3>${score} / ${unit.questions.length} correct</h3>
+      <p>Your result: <b>${percent}%</b></p>
+    </div>
+    ${output}
+  `;
+
+  resultBox.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+Object.keys(DATA).forEach(renderUnit);
+
+document.addEventListener("contextmenu", function(e){
   e.preventDefault();
-  alert("Бұл материал авторлық құқықпен қорғалған. Көшіруге рұқсат жоқ. © @elnazm_ln");
 });
 
-document.addEventListener("keydown",function(e){
-  if((e.ctrlKey||e.metaKey) && ["c","u","s","p"].includes(e.key.toLowerCase())){
+document.addEventListener("keydown", function(e){
+  if(
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) ||
+    (e.ctrlKey && ["U","S","P"].includes(e.key.toUpperCase()))
+  ){
     e.preventDefault();
-    alert("Көшіру/сақтау шектелген. © @elnazm_ln");
   }
 });
 </script>
+
 </body>
-</html>
+</html>  
