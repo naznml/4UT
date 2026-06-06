@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional English M019 — Unit 4</title>
+<style>
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f6fb;
+  color:#1f2937;
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(135deg,#1e3a8a,#7c3aed);
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+  font-size:34px;
+}
+header p{
+  margin-top:10px;
+  font-size:18px;
+  opacity:.95;
+}
+.wrapper{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 16px 50px;
+}
+.unit-card{
+  background:white;
+  border-radius:18px;
+  padding:24px;
+  margin-bottom:28px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+.unit-card h2{
+  margin-top:0;
+  color:#1e3a8a;
+  font-size:26px;
+}
+.unit-description{
+  background:#eef2ff;
+  border-left:5px solid #4f46e5;
+  padding:14px 16px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+.question{
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:18px;
+  margin:16px 0;
+  background:#ffffff;
+}
+.question-title{
+  font-weight:700;
+  margin-bottom:12px;
+  font-size:17px;
+}
+.qtype{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  color:#4338ca;
+  background:#e0e7ff;
+  padding:4px 8px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+label{
+  display:block;
+  padding:9px 10px;
+  margin:6px 0;
+  border-radius:10px;
+  cursor:pointer;
+  border:1px solid transparent;
+}
+label:hover{
+  background:#f3f4f6;
+  border-color:#e5e7eb;
+}
+input{
+  margin-right:8px;
+}
+button{
+  background:#4f46e5;
+  color:white;
+  border:none;
+  border-radius:12px;
+  padding:13px 22px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:18px;
+}
+button:hover{
+  background:#3730a3;
+}
+.result{
+  margin-top:25px;
+}
+.summary{
+  background:#ecfdf5;
+  border:1px solid #bbf7d0;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:18px;
+}
+.answer-card{
+  border-radius:14px;
+  padding:16px;
+  margin:12px 0;
+  border:1px solid #e5e7eb;
+}
+.correct{
+  background:#f0fdf4;
+  border-color:#86efac;
+}
+.wrong{
+  background:#fef2f2;
+  border-color:#fecaca;
+}
+.correct-text{
+  color:#15803d;
+  font-weight:700;
+}
+.wrong-text{
+  color:#b91c1c;
+  font-weight:700;
+}
+.explain{
+  margin-top:8px;
+  font-size:15px;
+}
+.small{
+  color:#6b7280;
+  font-size:13px;
+}
+.footer-note{
+  text-align:center;
+  margin-top:40px;
+  color:#6b7280;
+  font-size:14px;
+}
+.protect{
+  user-select:none;
+}
+@media(max-width:700px){
+  header h1{
+    font-size:26px;
+  }
+  .unit-card{
+    padding:18px;
+  }
+}
+</style>
+</head>
+<body class="protect">
+<header>
+  <h1>Professional English M019</h1>
+  <p>Unit 4 — Culture Saves the World</p>
+</header>
 
+<div class="wrapper">
+
+  <div class="unit-card">
+    <h2>Unit 4.1 — Cross-Cultural Communication</h2>
+    <div class="unit-description">
+      <b>Topic:</b> intercultural communication, cultural diversity, communication styles, Lewis Model, stereotypes, phrases and idioms.
+    </div>
+    <div id="quiz-unit41"></div>
+    <button onclick="checkUnit('unit41')">Показать результат</button>
+    <div id="result-unit41" class="result"></div>
+  </div>
+
+  <div class="unit-card">
+    <h2>Unit 4.2 — Maintaining Cultural Identity</h2>
+    <div class="unit-description">
+      <b>Topic:</b> identity, cultural identity, heritage, language and culture, intercultural awareness, clauses.
+    </div>
+    <div id="quiz-unit42"></div>
+    <button onclick="checkUnit('unit42')">Показать результат</button>
+    <div id="result-unit42" class="result"></div>
+  </div>
+
+  <div class="unit-card">
+    <h2>Unit 4.3 — Moral and Ethical Patterns of the Contemporary Society</h2>
+    <div class="unit-description">
+      <b>Topic:</b> values, morals, ethics, moral education, purpose clauses, cultural profile.
+    </div>
+    <div id="quiz-unit43"></div>
+    <button onclick="checkUnit('unit43')">Показать результат</button>
+    <div id="result-unit43" class="result"></div>
+  </div>
+
+  <div class="footer-note">
+    © @elnazm_ln — оқу материалы. Көшіруге және қайта сатуға болмайды.
+  </div>
+
+</div>
+
+<script>
+const DATA = {
+unit41:{
+title:"Unit 4.1 — Cross-Cultural Communication",
+questions:[
+{type:"single",q:"1. Cross-cultural communication means:",options:["communication only within one culture","communication between people from different cultural backgrounds","learning grammar without context","refusing cultural diversity","studying only one language system"],answers:[1],ru:"Cross-cultural communication refers to communication between people from different cultures.",kz:"Cross-cultural communication — әртүрлі мәдени ортадан шыққан адамдар арасындағы қарым-қатынас.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"2. Intercultural communication is described as:",options:["an interdisciplinary field of inquiry","only a branch of mathematics","only nonverbal behaviour","a purely biological process","a type of tourism advertising"],answers:[0],ru:"Intercultural communication is interdisciplinary because it uses perspectives from several academic fields.",kz:"Intercultural communication бірнеше academic disciplines көзқарастарын қолданатын interdisciplinary field.",source:"POFLIC, Unit 4.1"},
+{type:"multiple",q:"3. Academic disciplines involved in intercultural communication include:",options:["psychology","anthropology","linguistics","geometry","astronomy"],answers:[0,1,2],ru:"The unit mentions psychology, anthropology, sociology, linguistics and communication. Here three key disciplines are selected.",kz:"Unit psychology, anthropology, sociology, linguistics және communication пәндерін атайды. Мұнда үш негізгі пән таңдалды.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"4. Psychology contributes to intercultural communication through the study of:",options:["perception, interpretation and attribution","chemical reactions only","economic inflation only","architectural design","spelling rules only"],answers:[0],ru:"Psychology helps explain perception, interpretation and attribution in intercultural communication.",kz:"Psychology intercultural communication ішінде perception, interpretation және attribution түсіндіруге көмектеседі.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"5. Linguistics contributes to intercultural communication mainly through:",options:["verbal communication and communication styles","climate research","physical training","biological inheritance","taxation policy"],answers:[0],ru:"Linguistics studies language, verbal communication and communication styles.",kz:"Linguistics language, verbal communication және communication styles зерттейді.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"6. Nonverbal communication means:",options:["communication without words","written grammar rules only","official documents only","translated dictionaries","mathematical formulas"],answers:[0],ru:"Nonverbal communication includes body language, facial expressions, gestures and other non-word signals.",kz:"Nonverbal communication — body language, facial expressions, gestures сияқты сөзсіз белгілер.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"7. Communication style means:",options:["a culturally shaped way of expressing ideas and interacting","a type of school uniform","only handwriting","a musical genre","a legal document"],answers:[0],ru:"Communication style is the way people express ideas, solve problems and interact, often shaped by culture.",kz:"Communication style — адамның ойды жеткізу, problem-solving және interaction тәсілі; оған culture әсер етеді.",source:"POFLIC, Unit 4.1"},
+{type:"multiple",q:"8. Intercultural communication may involve:",options:["verbal communication","nonverbal communication","values","weather forecasting","sport ranking"],answers:[0,1,2],ru:"The scope of intercultural communication includes verbal communication, nonverbal communication and values.",kz:"Intercultural communication verbal communication, nonverbal communication және values қамтиды.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"9. Successful cross-cultural communication requires understanding:",options:["values and what people trust in another culture","only the alphabet","only the exchange rate","only food names","only population statistics"],answers:[0],ru:"To communicate successfully across cultures, people need to understand cultural values and trust patterns.",kz:"Cross-cultural communication сәтті болуы үшін cultural values және trust patterns түсіну қажет.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"10. Nordic, German and Anglo-Saxon cultures tend to trust:",options:["facts, figures and proven competence","only emotional speeches","rumours and stereotypes","silence only","random promises"],answers:[0],ru:"The unit states that these cultures tend to trust facts, figures and proven competence.",kz:"Unit бойынша Nordic, German және Anglo-Saxon cultures facts, figures және proven competence сенеді.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"11. Latin cultures tend to trust:",options:["charisma, vision and persuasive skills","only written contracts","silence and distance only","no personal contact","mathematical tables only"],answers:[0],ru:"Latin cultures are described as trusting charisma, vision and persuasive skills.",kz:"Latin cultures charisma, vision және persuasive skills-ке көбірек сенеді.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"12. The phrase “winning hearts comes first” means:",options:["emotional connection is important before logical persuasion","facts should always be ignored","people must avoid communication","silence is the only communication style","business should never use emotion"],answers:[0],ru:"In some cultures, emotional trust and personal connection come before rational arguments.",kz:"Кейбір cultures үшін emotional trust және personal connection logical arguments-тен бұрын келеді.",source:"POFLIC, Unit 4.1"},
+{type:"multiple",q:"13. Layers of culture may include:",options:["regional culture","professional culture","generational culture","cloud temperature","chemical formula"],answers:[0,1,2],ru:"Culture has many layers, including regional, professional, educational, gender, generational, class and corporate layers.",kz:"Culture бірнеше layer-ден тұрады: regional, professional, educational, gender, generational, class, corporate.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"14. Culture can be defined as:",options:["learned and shared ways of thinking, behaving and communicating","only national food","only traditional clothes","only official language","only museum objects"],answers:[0],ru:"Culture includes shared and learned ways of thinking, behaviour and communication.",kz:"Culture — ортақ және үйренілген thinking, behaviour және communication тәсілдері.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"15. Misunderstanding across cultures may occur because people:",options:["assume that all people are similar","always know all customs perfectly","never use nonverbal signs","speak only one language fluently","avoid any interpretation"],answers:[0],ru:"The assumption of similarities is a common source of intercultural misunderstanding.",kz:"Assumption of similarities — intercultural misunderstanding-тің жиі себебі.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"16. The assumption of similarities means:",options:["expecting people from different cultures to think and behave alike","accepting all cultural differences carefully","studying every encounter individually","avoiding stereotypes","developing tolerance of ambiguity"],answers:[0],ru:"Assumption of similarities means people expect others to share the same values, attitudes and behaviours.",kz:"Assumption of similarities — басқа адамдардың values, attitudes және behaviours бірдей деп күту.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"17. The assumption of differences helps people:",options:["adjust reactions and interpretations more appropriately","misread signs more often","ignore cultural context","judge others automatically","avoid observation"],answers:[0],ru:"Assuming differences helps people interpret behaviour more carefully and appropriately.",kz:"Assumption of differences адамдарға behaviour-ды мұқият және дұрыс interpret етуге көмектеседі.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"18. A nonjudgmental attitude means:",options:["observing without quick negative judgement","judging people immediately","refusing all differences","relying only on stereotypes","avoiding communication"],answers:[0],ru:"A nonjudgmental attitude means avoiding quick judgement and trying to understand context.",kz:"Nonjudgmental attitude — тез judgement жасамай, context түсінуге тырысу.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"19. Tolerance of ambiguity means:",options:["ability to accept uncertainty without immediate negative judgement","fear of every unclear situation","refusing new experiences","expecting one fixed answer always","avoiding intercultural contact"],answers:[0],ru:"Tolerance of ambiguity is important because intercultural situations are often unclear and complex.",kz:"Tolerance of ambiguity intercultural situations түсініксіз және complex болғанда қажет.",source:"POFLIC, Unit 4.1"},
+{type:"multiple",q:"20. To prepare better for intercultural communication, a person should develop:",options:["on-site observation","nonjudgmental attitude","tolerance of ambiguity","automatic stereotyping","refusal of differences"],answers:[0,1,2],ru:"The unit recommends observation, nonjudgmental attitude and tolerance of ambiguity.",kz:"Unit observation, nonjudgmental attitude және tolerance of ambiguity дамытуға кеңес береді.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"21. Stereotype means:",options:["oversimplified belief about a group of people","careful individual analysis","verified scientific law","neutral observation only","a grammar phrase"],answers:[0],ru:"A stereotype is a simplified and often unfair idea about a group.",kz:"Stereotype — белгілі бір group туралы тым жеңілдетілген, жиі әділетсіз пікір.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"22. Prejudice means:",options:["negative opinion formed without enough knowledge","respectful cultural analysis","fair academic research","reliable evidence","cultural adaptation"],answers:[0],ru:"Prejudice is a negative attitude formed before knowing enough facts.",kz:"Prejudice — жеткілікті facts білмей тұрып қалыптасқан negative attitude.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"23. Culture shock means:",options:["confusion or stress when entering an unfamiliar culture","learning grammar quickly","complete cultural expertise","avoiding travel","normal classroom routine"],answers:[0],ru:"Culture shock is discomfort or confusion caused by living in or encountering a different culture.",kz:"Culture shock — басқа culture-мен кездескенде немесе сол жерде өмір сүргенде туатын confusion/stress.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"24. Reverse culture shock means:",options:["difficulty readjusting to one’s home culture after being abroad","first arrival in a foreign country","learning a new alphabet","refusing all travel","misunderstanding grammar rules"],answers:[0],ru:"Reverse culture shock happens when a person returns home and finds readjustment difficult.",kz:"Reverse culture shock — abroad кейін home culture-ға қайта бейімделу қиындығы.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"25. The Iceberg of Culture suggests that:",options:["some cultural elements are visible, while deeper values are hidden","all culture is visible immediately","culture is only food and clothing","values are never important","communication has no hidden side"],answers:[0],ru:"The iceberg model shows that visible culture is only part of culture; deeper values and beliefs are hidden.",kz:"Iceberg model visible culture тек бір бөлігі екенін, deeper values және beliefs жасырын болатынын көрсетеді.",source:"POFLIC, Unit 4.1"},
+{type:"multiple",q:"26. Visible elements of culture may include:",options:["arts","fashion","food","deep values only","hidden beliefs only"],answers:[0,1,2],ru:"Visible cultural elements may include arts, fashion, food, mass media, rituals and social norms.",kz:"Visible cultural elements arts, fashion, food, mass media, rituals және social norms болуы мүмкін.",source:"POFLIC, Unit 4.1"},
+{type:"multiple",q:"27. Areas of cross-cultural misunderstanding may include:",options:["values","communication patterns","use of time and space","weather maps","exam scores only"],answers:[0,1,2],ru:"Misunderstanding often appears in values, communication patterns, and use of time and space.",kz:"Misunderstanding values, communication patterns және use of time/space салаларында жиі болады.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"28. The Lewis Model classifies cultures into:",options:["Linear-active, Multi-active and Reactive","Formal, informal and passive","Ancient, modern and future","Local, national and universal","Physical, chemical and biological"],answers:[0],ru:"The Lewis Model classifies cultures into Linear-active, Multi-active and Reactive categories.",kz:"Lewis Model cultures-ты Linear-active, Multi-active және Reactive categories деп бөледі.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"29. Linear-active cultures are generally associated with:",options:["planning, facts and job-oriented behaviour","doing many things at a time only","never confronting and listening most of the time only","avoiding schedules completely","emotional persuasion only"],answers:[0],ru:"Linear-active cultures are often linked with planning, facts, directness and task orientation.",kz:"Linear-active cultures planning, facts, directness және task orientation арқылы сипатталады.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"30. Multi-active cultures are generally associated with:",options:["emotion, persuasion and people-oriented behaviour","strict one-task planning only","silence and passive listening only","avoiding relationships","mechanical rules only"],answers:[0],ru:"Multi-active cultures are often people-oriented and value emotion, persuasion and relationships.",kz:"Multi-active cultures people-oriented болып, emotion, persuasion және relationships бағалайды.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"31. Reactive cultures are generally associated with:",options:["listening, courtesy and avoiding confrontation","speaking most of the time","direct confrontation in every case","ignoring relationships","rejecting harmony"],answers:[0],ru:"Reactive cultures often emphasize listening, courtesy, harmony and avoiding direct confrontation.",kz:"Reactive cultures listening, courtesy, harmony және avoiding confrontation арқылы сипатталады.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"32. A mediator in multicultural teams is someone who:",options:["helps people from different cultural styles understand one another","creates conflict intentionally","refuses communication","prevents teamwork","ignores cultural differences"],answers:[0],ru:"A mediator helps bridge communication gaps between different cultural styles.",kz:"Mediator әртүрлі cultural styles арасындағы communication gaps азайтуға көмектеседі.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"33. Verbal cultures usually value:",options:["open verbal expression and discussion","silence in all situations only","no spoken communication","written symbols only","gestures without speech only"],answers:[0],ru:"Verbal cultures tend to rely more on spoken expression and discussion.",kz:"Verbal cultures spoken expression және discussion-ға көбірек сүйенеді.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"34. Non-verbal cultures may value:",options:["silence, context and indirect communication","speaking all the time only","arguing loudly in every situation","ignoring body language","rejecting context"],answers:[0],ru:"Non-verbal cultures may communicate more through context, silence, body language and indirect signs.",kz:"Non-verbal cultures context, silence, body language және indirect signs арқылы communicate етуі мүмкін.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"35. Turn-taking in communication refers to:",options:["how people take turns during a conversation","how people travel abroad","how people write essays","how people choose clothes","how people read maps"],answers:[0],ru:"Turn-taking means the cultural rules for when and how people speak during conversation.",kz:"Turn-taking — conversation кезінде адамдардың қашан және қалай кезекпен сөйлеу ережелері.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"36. Problem-solving style in culture refers to:",options:["how people discuss and deal with problems","how people decorate rooms","how people memorize idioms","how people choose food","how people avoid all communication"],answers:[0],ru:"Different cultures may solve problems verbally, indirectly, collectively or through silence.",kz:"Әртүрлі cultures problems-ты verbally, indirectly, collectively немесе silence арқылы шешуі мүмкін.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"37. A prepositional phrase begins with:",options:["a preposition and ends with a noun or pronoun","a modal verb only","an article only","an adjective only","a conjunction only"],answers:[0],ru:"A prepositional phrase begins with a preposition and ends with a noun or pronoun.",kz:"Prepositional phrase preposition-нан басталып, noun немесе pronoun-мен аяқталады.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"38. An adjectival phrase functions as:",options:["an adjective","a verb tense","a complete sentence only","an interjection","a conjunction"],answers:[0],ru:"An adjectival phrase modifies or describes a noun like an adjective.",kz:"Adjectival phrase adjective сияқты noun-ды сипаттайды.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"39. An adverbial phrase functions as:",options:["an adverb","a noun only","an article","a pronoun only","a suffix"],answers:[0],ru:"An adverbial phrase modifies a verb, adjective or adverb.",kz:"Adverbial phrase verb, adjective немесе adverb-ті modifies етеді.",source:"POFLIC, Unit 4.1"},
+{type:"single",q:"40. An appositive phrase is:",options:["a noun or pronoun that renames another noun or pronoun","a verb form ending in -ing only","a sentence without a subject","a phrase beginning with a preposition","a type of idiom only"],answers:[0],ru:"An appositive gives another name or explanation for a noun or pronoun.",kz:"Appositive noun немесе pronoun-ды қайта атап, түсіндіреді.",source:"POFLIC, Unit 4.1"}
+]
+},
