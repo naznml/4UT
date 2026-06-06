@@ -346,3 +346,90 @@ questions:[
 ]
 }
 };
+function letter(i){
+  return String.fromCharCode(65+i);
+}
+
+function renderUnit(key){
+  const unit=DATA[key];
+  const container=document.getElementById("quiz-"+key);
+  container.innerHTML="";
+  unit.questions.forEach((q,qi)=>{
+    const inputType=q.type==="multiple"?"checkbox":"radio";
+    let html=`<div class="question">
+      <span class="qtype">${q.type==="multiple"?"Multiple answers":"Single answer"}</span>
+      <div class="question-title">${q.q}</div>`;
+    q.options.forEach((opt,oi)=>{
+      html+=`<label><input type="${inputType}" name="${key}-q${qi}" value="${oi}"> ${letter(oi)}) ${opt}</label>`;
+    });
+    html+=`</div>`;
+    container.innerHTML+=html;
+  });
+}
+
+function arraysEqual(a,b){
+  if(a.length!==b.length)return false;
+  const aa=[...a].sort((x,y)=>x-y);
+  const bb=[...b].sort((x,y)=>x-y);
+  return aa.every((v,i)=>v===bb[i]);
+}
+
+function getSelected(key,qi){
+  return Array.from(document.querySelectorAll(`input[name="${key}-q${qi}"]:checked`)).map(x=>Number(x.value));
+}
+
+function answerText(q,arr){
+  if(!arr||arr.length===0)return "Ответ не выбран";
+  return arr.map(i=>`${letter(i)}) ${q.options[i]}`).join("; ");
+}
+
+function checkUnit(key){
+  const unit=DATA[key];
+  let score=0;
+  let details="";
+  unit.questions.forEach((q,qi)=>{
+    const selected=getSelected(key,qi);
+    const ok=arraysEqual(selected,q.answers);
+    if(ok)score++;
+    details+=`<div class="answer-card ${ok?"correct":"wrong"}">
+      <div class="${ok?"correct-text":"wrong-text"}">${ok?"✔":"✘"} ${q.q}</div>
+      <div class="explain">
+        <b>Правильный ответ:</b> ${answerText(q,q.answers)}<br>
+        <b>Ваш ответ:</b> ${answerText(q,selected)}<br><br>
+        <b>Explanation RU:</b> ${q.ru}<br>
+        <b>Explanation KZ:</b> ${q.kz}<br>
+        <span class="small"><b>Source:</b> ${q.source}</span>
+      </div>
+    </div>`;
+  });
+
+  const percent=Math.round(score/unit.questions.length*100);
+  let level=percent>=80?"Жақсы нәтиже / Хороший результат":percent>=50?"Орташа нәтиже / Средний результат":"Қайталау керек / Нужно повторить";
+
+  document.getElementById("result-"+key).innerHTML=`<div class="summary">
+    <h2>${unit.title}</h2>
+    <h2>${score} / ${unit.questions.length} (${percent}%)</h2>
+    <p><b>${level}</b></p>
+  </div>`+details;
+
+  document.getElementById("result-"+key).scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+renderUnit("unit41");
+renderUnit("unit42");
+renderUnit("unit43");
+
+document.addEventListener("copy",function(e){
+  e.preventDefault();
+  alert("Бұл материал авторлық құқықпен қорғалған. Көшіруге рұқсат жоқ. © @elnazm_ln");
+});
+
+document.addEventListener("keydown",function(e){
+  if((e.ctrlKey||e.metaKey) && ["c","u","s","p"].includes(e.key.toLowerCase())){
+    e.preventDefault();
+    alert("Көшіру/сақтау шектелген. © @elnazm_ln");
+  }
+});
+</script>
+</body>
+</html>
